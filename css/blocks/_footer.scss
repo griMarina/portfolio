@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $grey-color;
+  justify-content: space-evenly;
+  height: 120px;
+
+  &-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-logo {
+    color: $light-color;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+      color: $dark-color;
+    }
+  }
+
+  &-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+
+    li {
+      list-style: none;
+    }
+
+    &-icon {
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-text {
+    color: $light-color;
+    text-align: center;
+  }
+}

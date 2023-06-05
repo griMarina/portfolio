@@ -1,0 +1,41 @@
+.header {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &-headings {
+    color: $dark-color;
+    margin-right: -60px;
+    z-index: 1;
+    animation: slideInLeft 1.5s forwards;
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-70%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    h3 {
+      color: $grey-color;
+      margin-top: 10px;
+    }
+  }
+
+  &-video {
+    width: 55%;
+    animation: slideInRight 1.5s forwards;
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(70%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+}
