@@ -12,15 +12,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/565da2c2c6.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <nav class="nav center">
-      <a href="#" class="nav-logo">gM</a>
+      <a href="#" class="nav-logo link">gM</a>
       <ul class="nav-links">
-        <li><a href="#" class="nav-link">ABOUT</a></li>
-        <li><a href="#" class="nav-link">PROJECTS</a></li>
-        <li><a href="#" class="nav-link">CONTACT</a></li>
+        <li><a href="#" class="nav-link link">ABOUT</a></li>
+        <li><a href="#" class="nav-link link">PROJECTS</a></li>
+        <li><a href="#" class="nav-link link">CONTACT</a></li>
       </ul>
     </nav>
     <header class="header">
@@ -39,32 +43,68 @@
       ></video>
     </header>
     <main>
-      <section id="about" class="block"></section>
-      <section id="projects" class="block"></section>
+      <section id="about" class="center">
+        <p>
+          A curiosity-driven web developer with a passion for continuous
+          learning
+        </p>
+        <a href="#" class="link">MORE ABOUT ME</a>
+      </section>
+      <section class="projects center">
+        <h3>MY LAST PROJECT</h3>
+        <ul>
+          <li class="project">
+            <figure class="project-container">
+              <div class="project-image">
+                <img
+                  src="./img/project-3.png"
+                  alt="portfolio project screenshot"
+                />
+                <div class="overlay"></div>
+              </div>
+              <figcaption class="project-desc">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptas nobis architecto, cum minima voluptatum at repellat
+                  earum, maxime iste qui tenetur tempore quibusdam quasi eos
+                  saepe aliquam commodi tempora deleniti? Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Voluptas nobis architecto,
+                  cum minima voluptatum at repellat earum, maxime iste qui
+                  tenetur tempore quibusdam quasi eos saepe aliquam commodi
+                  tempora deleniti?
+                </p>
+                <ul class="project-tools">
+                  <li>HTML</li>
+                  <li>SASS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </figcaption>
+              <div class="project-cta">
+                <a href="" class="project-cta-text link">LIVE</a>
+                <a href="" class="project-cta-text link">GITHUB</a>
+              </div>
+            </figure>
+          </li>
+        </ul>
+      </section>
       <section id="contact" class="block"></section>
     </main>
     <footer class="footer center">
       <div class="footer-links">
-        <a href="#" class="footer-logo">gM</a>
+        <a href="#" class="footer-logo link">gM</a>
         <ul class="footer-media">
           <li>
-            <a href="#" class="footer-media-icon"
-              ><img src="./icons/github.svg" alt="github link"
-            /></a>
+            <a href="#" class="link"><i class="fab fa-github"></i></a>
           </li>
           <li>
-            <a href="#" class="footer-media-icon"
-              ><img src="./icons/linkedin.svg" alt="linkedin link"
-            /></a>
+            <a href="#" class="link"><i class="fab fa-linkedin"></i></a>
           </li>
           <li>
-            <a href="#" class="footer-media-icon"
-              ><img src="./icons/instagram.svg" alt="instagram link"
-            /></a>
+            <a href="#" class="link"><i class="fab fa-instagram"></i></a>
           </li>
         </ul>
       </div>
-      <p class="footer-text">© 2023 Marina Grigoreva</p>
+      <p>&copy; 2023 Marina Grigoreva</p>
     </footer>
     <!-- <script src="script.js"></script> -->
   </body>

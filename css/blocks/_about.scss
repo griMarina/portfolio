@@ -1,0 +1,14 @@
+#about {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $grey-color;
+
+  p {
+    color: $dark-color;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+  }
+}

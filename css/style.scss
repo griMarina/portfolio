@@ -4,6 +4,8 @@
 @import "blocks/footer";
 @import "blocks/footer";
 @import "blocks/header";
+@import "blocks/about";
+@import "blocks/projects";
 
 * {
   margin: 0;
@@ -33,6 +35,17 @@ body {
 
 .center {
   padding: 0 calc(50% - 490px);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition-duration: 0.4s;
+
+  &:hover {
+    color: $light-color;
+    cursor: pointer;
+  }
 }
 
 /* tablet классический адаптив

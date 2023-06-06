@@ -3,16 +3,10 @@
   justify-content: space-between;
   margin-top: 15px;
   align-items: center;
+  color: $dark-color;
 
   &-logo {
-    color: $dark-color;
-    text-decoration: none;
     font-size: 1.5rem;
-
-    &:hover {
-      cursor: pointer;
-      color: $grey-color;
-    }
   }
 
   &-links {
@@ -26,13 +20,6 @@
   }
 
   &-link {
-    color: $dark-color;
-    text-decoration: none;
     font-size: 1rem;
-
-    &:hover {
-      cursor: pointer;
-      color: $grey-color;
-    }
   }
 }
