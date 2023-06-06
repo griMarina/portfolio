@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -8,14 +8,18 @@
     color: $dark-color;
     margin-right: -60px;
     z-index: 1;
-    animation: slideInLeft 1.5s forwards;
+    animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
-    @keyframes slideInLeft {
-      from {
-        transform: translateX(-70%);
+    @keyframes show {
+      0% {
+        // filter: blur(12px);
+        transform: scale(0.7);
+        opacity: 0;
       }
-      to {
-        transform: translateX(0);
+      100% {
+        // filter: blur(0px);
+        transform: scale(1);
+        opacity: 1;
       }
     }
 
@@ -27,15 +31,6 @@
 
   &-video {
     width: 55%;
-    animation: slideInRight 1.5s forwards;
-
-    @keyframes slideInRight {
-      from {
-        transform: translateX(70%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
+    animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
 }
