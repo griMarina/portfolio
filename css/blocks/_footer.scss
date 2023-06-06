@@ -3,7 +3,9 @@
   flex-direction: column;
   background-color: $grey-color;
   justify-content: space-evenly;
+  text-align: center;
   height: 120px;
+  color: #ffffff;
 
   &-links {
     display: flex;
@@ -11,14 +13,7 @@
   }
 
   &-logo {
-    color: $light-color;
-    text-decoration: none;
     font-size: 1.5rem;
-
-    &:hover {
-      cursor: pointer;
-      color: $dark-color;
-    }
   }
 
   &-media {
@@ -30,18 +25,9 @@
     li {
       list-style: none;
     }
-
-    &-icon {
-      text-decoration: none;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
   }
 
-  &-text {
-    color: $light-color;
-    text-align: center;
+  .fab {
+    font-size: 1.5rem;
   }
 }
