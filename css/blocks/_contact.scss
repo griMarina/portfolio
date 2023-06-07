@@ -1,0 +1,18 @@
+.contact {
+  min-height: 200px;
+  background-color: #f6c1a742;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: $dark-color;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  a {
+    color: $grey-color;
+  }
+}

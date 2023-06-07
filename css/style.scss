@@ -6,12 +6,13 @@
 @import "blocks/header";
 @import "blocks/about";
 @import "blocks/projects";
+@import "blocks/contact";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lora", serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 body {
