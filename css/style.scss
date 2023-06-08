@@ -35,7 +35,8 @@ body {
 }
 
 .center {
-  padding: 0 calc(50% - 490px);
+  // padding: 0 calc(50% - 490px);
+  padding: 0 13%;
 }
 
 .link {
@@ -49,48 +50,19 @@ body {
   }
 }
 
-/* tablet классический адаптив
-
-@media (max-width: 1180px) {
-    .wrapper {
-        width: 736px;
-    }
-
-    .center {
-        padding: 0 calc(50% - 368px);
-    }
-}
-
-mobile 
-
-@media (max-width: 767px) {
-    .wrapper {
-        width: 345px;
-    }
-
-    .center {
-        padding: 0 calc(50% - 172.5px);
-    }
-}
-*/
-
-// отзывчивый адаптив tablet
-
-@media (max-width: $tablet) {
-  // .wrapper {
-  //   padding: 0 16px;
-  // }
-
+@media (max-width: $laptop) {
   .center {
     padding: 0 10%;
   }
 }
 
-@media (max-width: $mobile) {
-  // .wrapper {
-  //   padding: 0 8px;
-  // }
+@media (max-width: $tablet) {
+  .center {
+    padding: 0 7%;
+  }
+}
 
+@media (max-width: $mobile) {
   .center {
     padding: 0 5%;
   }

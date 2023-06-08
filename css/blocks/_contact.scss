@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   p {
     color: $dark-color;
@@ -15,4 +16,21 @@
   a {
     color: $grey-color;
   }
+
+  @media (max-width: $tablet) {
+    p {
+      font-size: 1rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+
+  // @media (max-width: $mobile) {
+  //   p,
+  //   a {
+  //     font-size: 0.8rem;
+  //   }
+  // }
 }

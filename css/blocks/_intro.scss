@@ -1,5 +1,5 @@
 .intro {
-  min-height: 600px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -33,13 +33,25 @@
     animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
 
-  @media (max-width: $mobile) {
+  @media (max-width: 1024px) {
+    min-height: 500px;
+
+    &-video {
+      width: 65%;
+    }
+  }
+
+  @media (max-width: $laptop) {
+    min-height: 400px;
+  }
+
+  @media (max-width: $tablet) {
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: space-evenly;
+    min-height: 300px;
 
     &-headings {
       text-align: center;
-      margin-top: 50px;
       margin-right: 0;
 
       h1 {
@@ -53,9 +65,5 @@
     &-video {
       width: 100%;
     }
-  }
-
-  @media (max-width: $mobile-up) {
-    min-height: 500px;
   }
 }

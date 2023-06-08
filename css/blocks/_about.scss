@@ -1,14 +1,24 @@
-#about {
-  height: 300px;
+.about {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  margin-bottom: 100px;
   color: $grey-color;
 
   p {
     color: $dark-color;
     margin-bottom: 30px;
     font-size: 1.2rem;
+  }
+
+  @media (max-width: $mobile) {
+    p {
+      font-size: 1rem;
+    }
+    a {
+      font-size: 0.8rem;
+    }
   }
 }
