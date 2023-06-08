@@ -47,6 +47,10 @@
   @media (max-width: 768px) {
     .menu-btn {
       display: block;
+
+      path {
+        transition-duration: 0.4s;
+      }
     }
 
     .nav-links {
@@ -83,10 +87,6 @@
       li {
         margin-bottom: 40px;
       }
-    }
-
-    .menu-btn path {
-      transition-duration: 0.4s;
     }
 
     #toggle:checked ~ .menu-btn path:nth-of-type(1) {

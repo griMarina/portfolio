@@ -29,10 +29,10 @@ body {
 //   opacity: 0;
 // }
 
-// .wrapper {
-//   max-width: 980px;
-//   margin: 0 auto;
-// }
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
 
 .center {
   padding: 0 calc(50% - 490px);
@@ -76,22 +76,22 @@ mobile
 
 // отзывчивый адаптив tablet
 
-@media (max-width: 1195px) {
-  .wrapper {
-    padding: 0 16px;
-  }
+@media (max-width: $tablet) {
+  // .wrapper {
+  //   padding: 0 16px;
+  // }
 
   .center {
-    padding: 0 16px;
+    padding: 0 10%;
   }
 }
 
-@media (max-width: 788px) {
-  .wrapper {
-    padding: 0 8px;
-  }
+@media (max-width: $mobile) {
+  // .wrapper {
+  //   padding: 0 8px;
+  // }
 
   .center {
-    padding: 0 8px;
+    padding: 0 5%;
   }
 }

@@ -40,6 +40,9 @@
   .nav .menu-btn {
     display: block;
   }
+  .nav .menu-btn path {
+    transition-duration: 0.4s;
+  }
   .nav .nav-links {
     visibility: hidden;
     position: absolute;
@@ -67,9 +70,6 @@
   }
   .nav #toggle:checked ~ .nav-links li {
     margin-bottom: 40px;
-  }
-  .nav .menu-btn path {
-    transition-duration: 0.4s;
   }
   .nav #toggle:checked ~ .menu-btn path:nth-of-type(1) {
     transform: rotate(45deg);
@@ -178,6 +178,31 @@ main {
 .intro-video {
   width: 55%;
   animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .intro-headings {
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 0;
+  }
+  .intro-headings h1 {
+    font-size: 1rem;
+  }
+  .intro-headings h3 {
+    font-size: 0.8rem;
+  }
+  .intro-video {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .intro {
+    min-height: 500px;
+  }
 }
 
 #about {
@@ -317,6 +342,11 @@ body {
   min-height: 100vh;
 }
 
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 .center {
   padding: 0 calc(50% - 490px);
 }
@@ -355,19 +385,13 @@ mobile
     }
 }
 */
-@media (max-width: 1195px) {
-  .wrapper {
-    padding: 0 16px;
-  }
+@media (max-width: 1180px) {
   .center {
-    padding: 0 16px;
+    padding: 0 10%;
   }
 }
-@media (max-width: 788px) {
-  .wrapper {
-    padding: 0 8px;
-  }
+@media (max-width: 768px) {
   .center {
-    padding: 0 8px;
+    padding: 0 5%;
   }
 }/*# sourceMappingURL=style.css.map */
