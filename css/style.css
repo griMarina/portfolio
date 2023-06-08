@@ -17,8 +17,73 @@
 .nav-links li {
   list-style: none;
 }
+.nav-links li:first-child {
+  visibility: hidden;
+}
 .nav-link {
   font-size: 1rem;
+}
+.nav #toggle {
+  display: none;
+}
+.nav .menu-btn {
+  display: none;
+  z-index: 3;
+}
+.nav .menu-btn:hover {
+  cursor: pointer;
+}
+.nav .menu-btn svg {
+  vertical-align: bottom;
+}
+@media (max-width: 768px) {
+  .nav .menu-btn {
+    display: block;
+  }
+  .nav .nav-links {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: end;
+    background-color: rgba(63, 121, 143, 0.9411764706);
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    color: #ffffff;
+    transform: translateY(-100%);
+  }
+  .nav .nav-links li:first-child {
+    visibility: visible;
+  }
+  .nav #toggle:checked ~ .nav-links {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0);
+    transition: 0.6s;
+  }
+  .nav #toggle:checked ~ .nav-links li {
+    margin-bottom: 40px;
+  }
+  .nav .menu-btn path {
+    transition-duration: 0.4s;
+  }
+  .nav #toggle:checked ~ .menu-btn path:nth-of-type(1) {
+    transform: rotate(45deg);
+    transform-origin: -1px 3px;
+    fill: #ffffff;
+  }
+  .nav #toggle:checked ~ .menu-btn path:nth-of-type(2) {
+    display: none;
+  }
+  .nav #toggle:checked ~ .menu-btn path:nth-of-type(3) {
+    transform: rotate(-45deg);
+    transform-origin: 0px 13px;
+    fill: #ffffff;
+  }
 }
 
 main {
@@ -83,13 +148,13 @@ main {
   font-size: 1.5rem;
 }
 
-.header {
+.intro {
   min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.header-headings {
+.intro-headings {
   color: #041f2e;
   letter-spacing: 2px;
   margin-right: -60px;
@@ -102,15 +167,15 @@ main {
     opacity: 0;
   }
   100% {
-    transform: scale(1);
+    transform: scale(100%);
     opacity: 1;
   }
 }
-.header-headings h3 {
+.intro-headings h3 {
   color: #486f80;
   margin-top: 10px;
 }
-.header-video {
+.intro-video {
   width: 55%;
   animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
@@ -259,11 +324,11 @@ body {
 .link {
   text-decoration: none;
   color: inherit;
-  transition-duration: 0.4s;
 }
 .link:hover {
-  color: #fabda1;
+  color: #f5a681;
   cursor: pointer;
+  transition-duration: 0.4s;
 }
 
 /* tablet классический адаптив

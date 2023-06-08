@@ -19,30 +19,58 @@
   </head>
 
   <body>
-    <nav class="nav center">
-      <a href="#" class="nav-logo link">gM</a>
-      <ul class="nav-links">
-        <li><a href="#" class="nav-link link">ABOUT</a></li>
-        <li><a href="#" class="nav-link link">PROJECTS</a></li>
-        <li><a href="#" class="nav-link link">CONTACT</a></li>
-      </ul>
-    </nav>
-    <header class="header">
-      <div class="header-headings show">
-        <h1>MARINA GRIGOREVA</h1>
-        <h3>WEB DEVELOPER</h3>
-      </div>
-      <video
-        class="header-video show"
-        src="./video/home.mp4"
-        autoplay
-        loop
-        muted
-        type="video/mp4"
-        poster="./img/home.jpg"
-      ></video>
+    <header>
+      <nav class="nav center">
+        <a href="#" class="nav-logo link">gM</a>
+        <input type="checkbox" id="toggle" />
+        <label class="menu-btn" for="toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="20px"
+            height="20px"
+          >
+            <path
+              fill-rule="evenodd"
+              fill="#041f2e"
+              d="M-0.000,-0.000 L17.000,-0.000 L17.000,2.000 L-0.000,2.000 L-0.000,-0.000 Z"
+            />
+            <path
+              fill-rule="evenodd"
+              fill="#041f2e"
+              d="M-0.000,7.000 L17.000,7.000 L17.000,9.000 L-0.000,9.000 L-0.000,7.000 Z"
+            />
+            <path
+              fill-rule="evenodd"
+              fill="#041f2e"
+              d="M-0.000,14.000 L17.000,14.000 L17.000,16.000 L-0.000,16.000 L-0.000,14.000 Z"
+            />
+          </svg>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link link">HOME</a></li>
+          <li><a href="#" class="nav-link link">ABOUT</a></li>
+          <li><a href="#" class="nav-link link">PROJECTS</a></li>
+          <li><a href="#" class="nav-link link">CONTACT</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
+      <section class="intro">
+        <div class="intro-headings show">
+          <h1>MARINA GRIGOREVA</h1>
+          <h3>WEB DEVELOPER</h3>
+        </div>
+        <video
+          class="intro-video show"
+          src="./video/home.mp4"
+          autoplay
+          loop
+          muted
+          type="video/mp4"
+          poster="./img/home.jpg"
+        ></video>
+      </section>
       <section id="about" class="center">
         <p>
           A curiosity-driven web developer with a passion for continuous

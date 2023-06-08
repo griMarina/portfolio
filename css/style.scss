@@ -1,9 +1,9 @@
 @import "vars";
-@import "blocks/nav";
+@import "blocks/header";
 @import "blocks/main";
 @import "blocks/footer";
 @import "blocks/footer";
-@import "blocks/header";
+@import "blocks/intro";
 @import "blocks/about";
 @import "blocks/projects";
 @import "blocks/contact";
@@ -41,11 +41,11 @@ body {
 .link {
   text-decoration: none;
   color: inherit;
-  transition-duration: 0.4s;
 
   &:hover {
     color: $light-color;
     cursor: pointer;
+    transition-duration: 0.4s;
   }
 }
 
