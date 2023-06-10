@@ -1,12 +1,10 @@
 @import "vars";
 @import "blocks/header";
-@import "blocks/main";
 @import "blocks/footer";
-@import "blocks/footer";
-@import "blocks/intro";
-@import "blocks/about";
+@import "blocks/index";
 @import "blocks/projects";
-@import "blocks/contact";
+@import "blocks/about";
+// @import "blocks/contact";
 
 * {
   margin: 0;
@@ -19,6 +17,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 // .hidden {

@@ -1,24 +1,96 @@
 .about {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  margin-bottom: 100px;
-  color: $grey-color;
 
-  p {
+  @keyframes show {
+    0% {
+      transform: scale(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(100%);
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    color: $grey-color;
+  }
+
+  &-img {
+    width: 50%;
+    animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  &-text {
+    animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     color: $dark-color;
-    margin-bottom: 30px;
-    font-size: 1.2rem;
+    padding-left: 3%;
+    padding-right: 10%;
+
+    h3 {
+      font-size: 2.2rem;
+      color: inherit;
+      margin-bottom: 50px;
+      letter-spacing: 5px;
+    }
+
+    p {
+      text-align: right;
+    }
+  }
+
+  @media (max-width: $laptop) {
+    &-text {
+      margin-top: 50px;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+
+    &-img {
+      width: 60%;
+      align-self: flex-start;
+    }
+
+    &-text {
+      width: 80%;
+      align-self: flex-end;
+      padding-left: 0;
+
+      p {
+        padding-left: 30px;
+      }
+    }
   }
 
   @media (max-width: $mobile) {
-    p {
-      font-size: 1rem;
+    &-img {
+      width: 100%;
     }
-    a {
-      font-size: 0.8rem;
+
+    &-text {
+      width: 100%;
+      padding: 0 5%;
+      text-align: center;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        padding: 0;
+        text-align: center;
+      }
     }
   }
 }

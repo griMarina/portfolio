@@ -67,3 +67,56 @@
     }
   }
 }
+.index_about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 100px;
+  color: $grey-color;
+
+  p {
+    color: $dark-color;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: $mobile) {
+    p {
+      font-size: 1rem;
+    }
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
+.index_contact {
+  min-height: 200px;
+  background-color: #f8d4bb26;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    color: $dark-color;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  a {
+    color: $grey-color;
+  }
+
+  @media (max-width: $tablet) {
+    p {
+      font-size: 1rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
