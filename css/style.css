@@ -340,7 +340,7 @@
 }
 
 .about {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -390,6 +390,7 @@
 @media (max-width: 768px) {
   .about {
     flex-direction: column;
+    margin-bottom: 50px;
   }
   .about-img {
     width: 60%;
@@ -422,6 +423,59 @@
   }
 }
 
+.skills {
+  min-height: 400px;
+  background-color: rgba(248, 212, 187, 0.1490196078);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.skills h3 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #041f2e;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+.skills-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #486f80;
+  margin-bottom: 30px;
+  width: 80px;
+}
+.skills-list li .fab {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .skills {
+    min-height: 350px;
+  }
+  .skills h3 {
+    font-size: 1rem;
+  }
+  .skills-list li {
+    width: 70px;
+  }
+  .skills-list li .fab {
+    font-size: 40px;
+  }
+  .skills-list li span {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .skills {
+    min-height: 500px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -446,6 +500,7 @@ main {
 
 .center {
   padding: 0 13%;
+  width: 100%;
 }
 
 .link {
