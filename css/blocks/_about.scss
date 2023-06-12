@@ -17,15 +17,16 @@
 
   h3 {
     color: $grey-color;
+    font-weight: 400;
   }
 
   &-img {
     width: 50%;
-    animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: show 1s ease;
   }
 
   &-text {
-    animation: show 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: show 1s ease;
     color: $dark-color;
     padding-left: 3%;
     padding-right: 10%;
@@ -39,6 +40,7 @@
 
     p {
       text-align: right;
+      font-size: 1.2rem;
     }
   }
 
@@ -50,6 +52,10 @@
         font-size: 1.8rem;
         margin-bottom: 30px;
         letter-spacing: 3px;
+      }
+
+      p {
+        font-size: 1rem;
       }
     }
   }
@@ -97,11 +103,11 @@
 }
 
 .skills {
-  min-height: 400px;
   background-color: #f8d4bb26;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 50px 0;
 
   h3 {
     text-align: center;
@@ -131,7 +137,7 @@
   }
 
   @media (max-width: $tablet) {
-    min-height: 350px;
+    padding: 30px 0;
 
     h3 {
       font-size: 1rem;
@@ -151,8 +157,90 @@
       }
     }
   }
+}
+
+.hobbies {
+  margin: 10% 0;
+
+  p {
+    text-align: center;
+    margin-bottom: 50px;
+    color: $dark-color;
+    font-size: 1.2rem;
+  }
+
+  &-photo {
+    position: relative;
+
+    .slider {
+      display: flex;
+      justify-content: space-evenly;
+      height: 300px;
+
+      &-btn-left,
+      &-btn-right {
+        position: absolute;
+        top: 45%;
+        padding: 8px;
+        background: #f8d4bb26;
+        color: $grey-color;
+        font-size: 20px;
+        border: none;
+        display: flex;
+        cursor: pointer;
+      }
+
+      &-btn-left {
+        left: -5%;
+      }
+
+      &-btn-right {
+        right: -5%;
+      }
+    }
+  }
+
+  @media (max-width: 1135px) {
+    .slider {
+      height: 250px;
+    }
+  }
+
+  @media (max-width: $laptop) {
+    .slider {
+      height: 220px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .slider {
+      height: 400px;
+      justify-content: center;
+
+      &-img:nth-child(2),
+      &-img:last-child {
+        display: none;
+      }
+    }
+  }
 
   @media (max-width: $mobile) {
-    min-height: 500px;
+    margin: 25% 0;
+
+    p {
+      font-size: 1rem;
+    }
+
+    &-photo {
+      .slider {
+        height: 300px;
+
+        &-btn-left,
+        &-btn-right {
+          padding: 5px;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }

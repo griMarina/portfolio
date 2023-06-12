@@ -1,15 +1,17 @@
 .projects {
   text-align: center;
   color: $dark-color;
-  margin-bottom: 90px;
 
-  h3 {
-    margin-bottom: 60px;
+  &-heading {
+    margin: 60px 0;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
 
-  ul {
+  &-list {
     display: flex;
     list-style: none;
+    flex-direction: column;
   }
 
   .project {
@@ -19,7 +21,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 60px;
+      margin-bottom: 120px;
     }
 
     &-image {
@@ -89,46 +91,57 @@
         }
       }
     }
-  }
 
-  .all-btn {
-    color: $grey-color;
+    &:nth-child(even) {
+      .project-container {
+        flex-direction: row-reverse;
+      }
+
+      .project-desc {
+        align-items: flex-start;
+        text-align: start;
+        padding-left: 0;
+        padding-right: 30px;
+      }
+    }
   }
 
   @media (max-width: $laptop) {
-    .project {
-      &-image {
+    &-heading {
+      font-size: 1.2rem;
+    }
+
+    .project,
+    .project:nth-child(even) {
+      .project-image {
         max-width: 430px;
       }
 
-      &-desc {
+      .project-desc {
         max-width: 300px;
       }
     }
   }
 
   @media (max-width: $tablet) {
-    h3 {
-      font-size: 1.1rem;
-    }
-
-    .project {
-      &-container {
+    .project,
+    .project:nth-child(even) {
+      .project-container {
         flex-direction: column;
       }
 
-      &-image {
+      .project-image {
         max-width: 100%;
       }
 
-      &-desc {
+      .project-desc {
         max-width: 100%;
         align-items: center;
         text-align: center;
         margin-top: 30px;
         padding-left: 0;
 
-        &-text {
+        .project-desc-text {
           line-height: 1rem;
         }
       }
