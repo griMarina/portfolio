@@ -10,25 +10,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Cormorant Garamond", serif;
 }
 
 body {
-  background-image: url(../img/bg.jpg);
-  background-color: #81aba899;
-  background-attachment: fixed;
-  color: #ffffff;
-  font-family: "Cormorant Garamond", serif;
-  overflow-x: hidden;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Cormorant Garamond", serif;
-}
-
-.container {
-  padding: 0 7vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
@@ -56,6 +44,12 @@ main {
 .link {
   text-decoration: none;
   color: inherit;
+
+  &:hover {
+    color: $light-color;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
 }
 
 @media (max-width: $laptop) {

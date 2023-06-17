@@ -17,46 +17,62 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <header>
-      <nav class="nav">
-        <a href="./index.html" class="nav-logo link"><span>gM</span></a>
+      <nav class="nav center">
+        <a href="./index.html" class="nav-logo link">gM</a>
         <input type="checkbox" id="toggle" />
-        <label class="menu" for="toggle">
-          <div class="menu-icon">
-            <div>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
+        <label class="menu-btn" for="toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="20px"
+            height="20px"
+          >
+            <path
+              fill-rule="evenodd"
+              fill="#041f2e"
+              d="M-0.000,-0.000 L17.000,-0.000 L17.000,2.000 L-0.000,2.000 L-0.000,-0.000 Z"
+            />
+            <path
+              fill-rule="evenodd"
+              fill="#041f2e"
+              d="M-0.000,7.000 L17.000,7.000 L17.000,9.000 L-0.000,9.000 L-0.000,7.000 Z"
+            />
+            <path
+              fill-rule="evenodd"
+              fill="#041f2e"
+              d="M-0.000,14.000 L17.000,14.000 L17.000,16.000 L-0.000,16.000 L-0.000,14.000 Z"
+            />
+          </svg>
         </label>
         <ul class="nav-links">
-          <li>
-            <a href="#" class="nav-link link"><span>ABOUT</span></a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link"><span>PROJECTS</span></a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link"><span>CONTACT</span></a>
-          </li>
+          <li><a href="./index.html" class="nav-link link">HOME</a></li>
+          <li><a href="./about.html" class="nav-link link">ABOUT</a></li>
+          <li><a href="./projects.html" class="nav-link link">PROJECTS</a></li>
+          <li><a href="./contact.html" class="nav-link link">CONTACT</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="intro">
-        <img class="intro-img" src="/img/intro-img.png" alt="intro image" />
-        <div class="container">
-          <div class="intro-headings">
-            <h1 class="intro-headings-name">
-              MARINA GRIGOREVA
-              <!-- <span class="intro-headings-title">WEB DEVELOPER</span> -->
-            </h1>
-            <h3 class="intro-headings-title">WEB DEVELOPER</h3>
-          </div>
+        <div class="intro-headings show">
+          <h1>MARINA GRIGOREVA</h1>
+          <h3>WEB DEVELOPER</h3>
         </div>
+        <!-- video by Miguel Á. Padriñán: https://www.pexels.com/video/white-clouds-on-the-blue-sky-6772574/ -->
+        <video
+          class="intro-video show"
+          src="./video/home.mp4"
+          autoplay
+          loop
+          muted
+          type="video/mp4"
+          poster="./img/home.jpg"
+        ></video>
       </section>
-      <!-- <section class="index_about center">
+      <section class="index_about center">
         <p>
           A curiosity-driven web developer with a passion for continuous
           learning
@@ -103,9 +119,9 @@
           eiusmod tempor incididunt ut labore
         </p>
         <a href="./contact.html" class="link">GET IN TOUCH</a>
-      </section>-->
+      </section>
     </main>
-    <!-- <footer class="footer center">
+    <footer class="footer center">
       <div class="footer-links">
         <a href="./index.html" class="footer-logo link">gM</a>
         <ul class="footer-media">
@@ -121,6 +137,7 @@
         </ul>
       </div>
       <p>&copy; 2023 Marina Grigoreva</p>
-    </footer> -->
+    </footer>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
