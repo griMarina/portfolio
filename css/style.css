@@ -91,7 +91,7 @@
   visibility: hidden;
   position: fixed;
   top: 0;
-  background-image: url("/img/bg-dropdown.jpg");
+  background-image: url("./img/bg-dropdown.jpg");
   background-color: #fafafa;
   height: 100vh;
   width: 100vw;
@@ -514,7 +514,7 @@
 }
 
 body {
-  background-image: url(../img/bg.jpg);
+  background-image: url("./img/bg.jpg");
   background-color: #c0e8df;
   background-attachment: fixed;
   color: #ffffff;
