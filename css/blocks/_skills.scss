@@ -1,0 +1,31 @@
+.skills {
+  height: calc($index * 20);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &-title {
+    @include slide-header;
+    top: -24%;
+  }
+
+  &-list {
+    list-style-type: none;
+    columns: 3;
+    font-size: 1.5rem;
+    color: #4b514f;
+  }
+
+  @media (max-width: $tablet) {
+    &-list {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-list {
+      columns: 2;
+      font-size: 1rem;
+    }
+  }
+}

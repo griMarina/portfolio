@@ -1,10 +1,11 @@
 @import "vars";
 @import "blocks/header";
-@import "blocks/footer";
-@import "blocks/index";
-@import "blocks/projects";
+@import "blocks/intro";
 @import "blocks/about";
+@import "blocks/skills";
+@import "blocks/projects";
 @import "blocks/contact";
+@import "blocks/footer";
 
 * {
   margin: 0;
@@ -14,7 +15,7 @@
 
 body {
   background-image: url(../img/bg.jpg);
-  background-color: #81aba899;
+  background-color: #c0e8df;
   background-attachment: fixed;
   color: #ffffff;
   font-family: "Cormorant Garamond", serif;
@@ -23,8 +24,10 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+p {
   font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
 }
 
 .container {
@@ -33,24 +36,6 @@ h3 {
 
 main {
   flex-grow: 1;
-}
-
-// .hidden {
-//   position: absolute;
-//   left: -999999px;
-//   width: 1px;
-//   height: 1px;
-//   opacity: 0;
-// }
-
-.wrapper {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.center {
-  padding: 0 13%;
-  width: 100%;
 }
 
 .link {

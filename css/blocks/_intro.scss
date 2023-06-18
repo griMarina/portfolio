@@ -1,0 +1,43 @@
+.intro {
+  height: calc($index * 33);
+
+  &-img {
+    width: calc($index * 28);
+    position: absolute;
+    left: 45vw;
+    top: 0;
+    z-index: -1;
+    overflow-x: hidden;
+  }
+
+  &-headings {
+    display: flex;
+    flex-direction: column;
+    margin-top: 43vh;
+    letter-spacing: calc($index * 0.5);
+
+    &-name {
+      font-size: $h1-size;
+      margin-bottom: calc((1vw + 1vh) * 2);
+      line-height: 0.9;
+      width: min-content;
+    }
+
+    &-title {
+      font-size: $h2-size;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &-img {
+      width: calc($index * 20);
+      left: unset;
+      right: 0;
+      top: 5vh;
+    }
+
+    &-headings {
+      margin-top: 50vh;
+    }
+  }
+}

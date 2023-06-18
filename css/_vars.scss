@@ -1,8 +1,19 @@
 $index: calc(1vw + 1vh);
 $gallery-gap: calc($index * 10);
+$h1-size: calc($index * 4);
+$h2-size: calc($index * 2.5);
 $light-color: #f5a681;
 $dark-color: #041f2e;
 $grey-color: #486f80;
 $laptop: 992px;
 $tablet: 768px;
 $mobile: 576px;
+
+@mixin slide-header {
+  position: absolute;
+  font-weight: 500;
+  font-size: calc($index * 7);
+  color: #ddeeeaed;
+  z-index: -1;
+  left: 0;
+}
