@@ -3,10 +3,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: $gallery-gap;
 
   &-title {
     @include slide-header;
-    top: -24%;
+    top: -25%;
   }
 
   &-list {
@@ -17,15 +18,18 @@
   }
 
   @media (max-width: $tablet) {
+    margin-bottom: calc($gallery-gap * 2);
+
     &-list {
       font-size: 1.2rem;
     }
   }
 
   @media (max-width: $mobile) {
+    margin-bottom: calc($gallery-gap * 4);
+
     &-list {
       columns: 2;
-      font-size: 1rem;
     }
   }
 }

@@ -14,7 +14,7 @@
 }
 
 body {
-  background-image: url("./img/bg.jpg");
+  background-image: url("../img/bg.jpg");
   background-color: #c0e8df;
   background-attachment: fixed;
   color: #ffffff;
@@ -34,8 +34,16 @@ p {
   padding: 0 7vw;
 }
 
-main {
-  flex-grow: 1;
+// main {
+//   flex-grow: 1;
+// }
+
+.hidden {
+  position: absolute;
+  left: -999999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 
 .link {

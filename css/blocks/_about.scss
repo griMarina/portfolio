@@ -86,9 +86,11 @@
 
 .about {
   height: calc($index * 20);
+
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: $gallery-gap;
 
   &-title {
     @include slide-header;
@@ -101,11 +103,7 @@
   }
 
   @media (max-width: $tablet) {
-    height: calc($index * 25);
-
-    &-title {
-      top: -18%;
-    }
+    margin-bottom: calc($gallery-gap * 2);
 
     &-text {
       font-size: 1.2rem;
@@ -113,22 +111,14 @@
   }
 
   @media (max-width: $mobile) {
-    height: calc($index * 30);
-
-    &-title {
-      top: -16%;
-    }
+    margin-bottom: calc($gallery-gap * 6);
 
     &-text {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
   @media (max-width: 375px) {
-    height: calc($index * 40);
-
-    &-title {
-      top: -11%;
-    }
+    margin-bottom: calc($gallery-gap * 12);
   }
 }
