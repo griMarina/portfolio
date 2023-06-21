@@ -85,40 +85,38 @@
 // }
 
 .about {
-  height: calc($index * 20);
-
+  height: fit-content;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: $gallery-gap;
+  margin-bottom: calc($gallery-gap * 6);
 
   &-title {
     @include slide-header;
-    top: -25%;
+    top: -13vh;
   }
 
   &-text {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    line-height: 1.5;
     color: #4b514f;
   }
 
-  @media (max-width: $tablet) {
-    margin-bottom: calc($gallery-gap * 2);
+  @media (max-width: $laptop) {
+    &-title {
+      top: -10vh;
+    }
+  }
 
+  @media (max-width: $tablet) {
     &-text {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: calc($gallery-gap * 6);
-
-    &-text {
-      font-size: 1.2rem;
+    &-title {
+      top: -7vh;
     }
-  }
-
-  @media (max-width: 375px) {
-    margin-bottom: calc($gallery-gap * 12);
   }
 }

@@ -12,7 +12,7 @@ $mobile: 576px;
 @mixin slide-header {
   position: absolute;
   font-weight: 500;
-  font-size: calc($index * 7);
+  font-size: calc($index * 6);
   color: #ddeeeaed;
   z-index: -1;
   left: 0;

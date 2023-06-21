@@ -1,32 +1,46 @@
 .skills {
-  height: calc($index * 20);
+  // height: calc($index * 20);
+  height: fit-content;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: $gallery-gap;
+  margin-bottom: calc($gallery-gap * 6);
 
   &-title {
     @include slide-header;
-    top: -25%;
+    top: -13vh;
   }
 
   &-list {
     list-style-type: none;
     columns: 3;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #4b514f;
+    li {
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: $laptop) {
+    &-title {
+      top: -10vh;
+    }
   }
 
   @media (max-width: $tablet) {
-    margin-bottom: calc($gallery-gap * 2);
+    // margin-bottom: calc($gallery-gap * 3);
 
     &-list {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: calc($gallery-gap * 4);
+    // margin-bottom: calc($gallery-gap * 4);
+
+    &-title {
+      top: -7vh;
+    }
 
     &-list {
       columns: 2;

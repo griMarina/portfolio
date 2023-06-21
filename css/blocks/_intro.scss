@@ -1,5 +1,5 @@
 .intro {
-  height: calc($index * 33);
+  height: calc($index * 30);
 
   &-img {
     width: calc($index * 28);
@@ -37,7 +37,7 @@
     }
 
     &-headings {
-      margin-top: 50vh;
+      margin-top: 56vh;
     }
   }
 }

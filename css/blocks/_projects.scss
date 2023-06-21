@@ -1,23 +1,24 @@
 .projects {
-  height: calc($index * 20);
+  height: fit-content;
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: calc($gallery-gap * 6);
 
   &-title {
     @include slide-header;
-    top: -25%;
+    top: -13vh;
   }
 
   &-heading {
     text-align: center;
     color: $dark-color;
     font-size: 2.2rem;
+    font-weight: 300;
   }
 
   &-gallery {
     display: flex;
-    padding: calc($index * 4) 0;
 
     &-left > * {
       margin-top: calc($gallery-gap * 4);
@@ -45,18 +46,28 @@
         }
       }
 
-      .project-image {
+      figure {
         margin-top: calc($gallery-gap * 4);
       }
     }
 
     figure {
+      max-width: calc($index * 21);
+      // max-height: calc($index * 41);
+
+      max-height: 180vh;
+      margin-bottom: $gallery-gap;
+      border-radius: 8px;
       position: relative;
       overflow: hidden;
+
       transition: 0.5s;
 
-      img {
+      .project-image {
         transition: 0.5s;
+        width: 100%;
+        height: 100%;
+        object-fit: scover;
       }
 
       .overlay {
@@ -66,7 +77,7 @@
         right: 0;
         height: 100%;
         background-color: #dceeeae3;
-        color: $dark-color;
+        color: #2f3332;
         letter-spacing: 3px;
         display: flex;
         align-items: center;
@@ -101,12 +112,10 @@
     flex-direction: column;
   }
 
-  .project-image {
-    max-width: calc($index * 21);
-    max-height: 180vh;
-    margin-bottom: $gallery-gap;
-    border-radius: 8px;
-  }
+  // .project-image {
+  //   width: 100%;
+  //   height: 100%;
+  // }
 
   .project-desc {
     line-height: 1.2;
@@ -131,6 +140,10 @@
   }
 
   @media (max-width: $laptop) {
+    &-title {
+      top: -10vh;
+    }
+
     .project-desc {
       font-size: 1.2rem;
     }
@@ -143,10 +156,6 @@
 
     .projects-gallery {
       flex-direction: column;
-
-      .project-image {
-        max-width: calc($index * 31);
-      }
     }
 
     &-right > * {
@@ -155,6 +164,16 @@
 
     .project-desc {
       display: none;
+    }
+
+    figure {
+      max-width: calc($index * 31);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-title {
+      top: -7vh;
     }
   }
 }
