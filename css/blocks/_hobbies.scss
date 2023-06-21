@@ -1,0 +1,81 @@
+.hobbies {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: calc($gallery-gap * 6);
+
+  &-title {
+    @include slide-header;
+    top: -13vh;
+  }
+
+  &-text {
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    color: #4b514f;
+    margin-bottom: calc($gallery-gap * 4);
+  }
+
+  .slider {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &-img {
+      min-width: calc($index * 10);
+      max-height: calc($index * 20);
+      border-radius: 8px;
+
+      &:nth-child(3) {
+        margin: 0 1%;
+      }
+    }
+
+    &-btn-left,
+    &-btn-right {
+      position: absolute;
+      top: 50%;
+      background: none;
+      color: $light-color;
+      font-size: 30px;
+      border: none;
+      cursor: pointer;
+    }
+
+    &-btn-left {
+      left: 0;
+    }
+
+    &-btn-right {
+      right: 0;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &-text {
+      font-size: 1.5rem;
+    }
+
+    .slider {
+      justify-content: center;
+
+      &-img {
+        width: calc((1vw + 1vh) * 31);
+        max-height: unset;
+      }
+
+      &-img:nth-child(3),
+      &-img:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-text {
+      font-size: 1.2rem;
+    }
+  }
+}

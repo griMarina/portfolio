@@ -404,6 +404,79 @@
   }
 }
 
+.hobbies {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: calc((1vw + 1vh) * 2 * 6);
+}
+.hobbies-title {
+  position: absolute;
+  font-weight: 500;
+  font-size: calc((1vw + 1vh) * 6);
+  color: rgba(221, 238, 234, 0.9294117647);
+  z-index: -1;
+  left: 0;
+  top: -13vh;
+}
+.hobbies-text {
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: #4b514f;
+  margin-bottom: calc((1vw + 1vh) * 2 * 4);
+}
+.hobbies .slider {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.hobbies .slider-img {
+  min-width: calc((1vw + 1vh) * 10);
+  max-height: calc((1vw + 1vh) * 20);
+  border-radius: 8px;
+}
+.hobbies .slider-img:nth-child(3) {
+  margin: 0 1%;
+}
+.hobbies .slider-btn-left, .hobbies .slider-btn-right {
+  position: absolute;
+  top: 50%;
+  background: none;
+  color: #809f98;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+.hobbies .slider-btn-left {
+  left: 0;
+}
+.hobbies .slider-btn-right {
+  right: 0;
+}
+@media (max-width: 768px) {
+  .hobbies-text {
+    font-size: 1.5rem;
+  }
+  .hobbies .slider {
+    justify-content: center;
+  }
+  .hobbies .slider-img {
+    width: calc((1vw + 1vh) * 31);
+    max-height: unset;
+  }
+  .hobbies .slider-img:nth-child(3), .hobbies .slider-img:nth-child(4) {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .hobbies-text {
+    font-size: 1.2rem;
+  }
+}
+
 .contact {
   display: flex;
   flex-direction: column;

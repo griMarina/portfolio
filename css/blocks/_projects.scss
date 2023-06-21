@@ -53,8 +53,6 @@
 
     figure {
       max-width: calc($index * 21);
-      // max-height: calc($index * 41);
-
       max-height: 180vh;
       margin-bottom: $gallery-gap;
       border-radius: 8px;
