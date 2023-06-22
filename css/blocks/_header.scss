@@ -10,26 +10,6 @@
     margin-left: 7vw;
   }
 
-  // &-logo::after {
-  //   display: block;
-  //   visibility: hidden;
-  //   border-radius: 50%;
-  //   content: "";
-  //   height: 10px;
-  //   width: 10px;
-  //   position: absolute;
-  //   left: 70px;
-  //   top: 65px;
-  //   box-shadow: inset 0 0 0 1px #ffffff;
-
-  //   transition: 0.4s ease-in;
-  // }
-
-  // &-logo:hover::after {
-  //   visibility: visible;
-  //   box-shadow: inset 0 0 0 5px #ffffff;
-  // }
-
   #toggle {
     display: none;
   }
@@ -99,12 +79,14 @@
   }
 
   .menu:hover .menu-icon div {
-    span:first-of-type {
-      width: 29px;
-    }
+    @media (min-width: 1024px) {
+      span:first-of-type {
+        width: 29px;
+      }
 
-    span:last-of-type {
-      width: 16px;
+      span:last-of-type {
+        width: 16px;
+      }
     }
   }
 

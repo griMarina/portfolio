@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../img/bg.jpg");
+  background-color: #c0e8df;
+  background-attachment: fixed;
+  color: #ffffff;
+  // font-family: "Cormorant Garamond", serif;
+  font-family: "Montaga", serif;
+  // font-family: "Stoke", serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: inherit;
+}
+
+.container {
+  padding: 0 7vw;
+}
+
+.hidden {
+  position: absolute;
+  left: -999999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: $laptop) {
+  .center {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: $tablet) {
+  .center {
+    padding: 0 7%;
+  }
+}
+
+@media (max-width: $mobile) {
+  .center {
+    padding: 0 5%;
+  }
+}
