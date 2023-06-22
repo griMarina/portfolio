@@ -1,20 +1,24 @@
 .contact {
+  height: fit-content;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: $dark-color;
-  margin: 90px 0;
+  margin-bottom: calc($gallery-gap * 4);
 
-  &-heading {
-    font-size: 2rem;
-    margin-bottom: 50px;
-    font-weight: 400;
+  &-title {
+    @include slide-header;
+    top: -13vh;
   }
 
   &-text {
-    font-size: 1.2rem;
-    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    color: #4b514f;
+    margin-bottom: calc($gallery-gap * 2);
   }
 
   &-form {
@@ -24,34 +28,35 @@
 
     &-input {
       padding: 20px;
-      border: 1px solid $grey-color;
+      border: none;
       border-radius: 10px;
       font-size: 1.2rem;
       margin-bottom: 30px;
       color: inherit;
+      font-family: inherit;
+      // background-color: ;
 
       &::placeholder {
-        color: $grey-color;
+        color: $light-color;
         opacity: 1;
       }
     }
 
     &-btn {
       width: 20%;
+      height: 60px;
       align-self: center;
-      padding: 20px;
-      border-radius: 10px;
+      text-align: center;
+      border-radius: 8px;
       font-size: 1.2rem;
-      border: 1px solid #f5a68185;
-      background-color: #f5a68185;
-      color: $grey-color;
+      border: none;
+      background-color: #f2f3f394;
+      color: $light-color;
       transition: 0.4s;
 
       &:hover {
         cursor: pointer;
         background-color: #ffffff;
-        color: $light-color;
-        border: 1px solid $light-color;
       }
     }
   }
@@ -75,12 +80,6 @@
         width: 80px;
         font-size: 1rem;
       }
-    }
-  }
-
-  @media (max-width: $mobile) {
-    &-text {
-      font-size: 0.8rem;
     }
   }
 }

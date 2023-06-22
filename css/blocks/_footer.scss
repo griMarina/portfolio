@@ -1,11 +1,13 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: $grey-color;
+  background-color: #c0e8df;
+  background-image: url("../img/bg-dropdown.jpg");
   justify-content: space-evenly;
   text-align: center;
-  height: 120px;
-  color: #ffffff;
+  height: 100px;
+  color: $light-color;
+  border-top: 1px solid #f2f3f394;
 
   &-links {
     display: flex;
