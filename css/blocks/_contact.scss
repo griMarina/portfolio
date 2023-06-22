@@ -34,7 +34,6 @@
       margin-bottom: 30px;
       color: inherit;
       font-family: inherit;
-      // background-color: ;
 
       &::placeholder {
         color: $light-color;
@@ -53,6 +52,7 @@
       background-color: #f2f3f394;
       color: $light-color;
       transition: 0.4s;
+      font-family: inherit;
 
       &:hover {
         cursor: pointer;
@@ -60,13 +60,20 @@
       }
     }
   }
+
+  @media (max-width: $laptop) {
+    &-title {
+      top: -10vh;
+    }
+  }
+
   @media (max-width: $tablet) {
     &-heading {
       font-size: 1.5rem;
     }
 
     &-text {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
 
     &-form {
@@ -80,6 +87,16 @@
         width: 80px;
         font-size: 1rem;
       }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-title {
+      top: -7vh;
+    }
+
+    &-text {
+      font-size: 1.2rem;
     }
   }
 }

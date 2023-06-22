@@ -534,17 +534,23 @@
   background-color: rgba(242, 243, 243, 0.5803921569);
   color: #809f98;
   transition: 0.4s;
+  font-family: inherit;
 }
 .contact-form-btn:hover {
   cursor: pointer;
   background-color: #ffffff;
+}
+@media (max-width: 992px) {
+  .contact-title {
+    top: -10vh;
+  }
 }
 @media (max-width: 768px) {
   .contact-heading {
     font-size: 1.5rem;
   }
   .contact-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .contact-form {
     width: 100%;
@@ -555,6 +561,14 @@
   .contact-form-btn {
     width: 80px;
     font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .contact-title {
+    top: -7vh;
+  }
+  .contact-text {
+    font-size: 1.2rem;
   }
 }
 
