@@ -20,62 +20,63 @@
 
   .slider {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+
+    &-buttons {
+      .slider-btn-previous,
+      .slider-btn-next {
+        position: absolute;
+        top: 45%;
+        background: none;
+        color: #fafafa;
+        font-size: 40px;
+        border: none;
+        z-index: 2;
+        cursor: pointer;
+      }
+
+      .slider-btn-previous {
+        left: 1vw;
+      }
+
+      .slider-btn-next {
+        right: 0;
+      }
+    }
+
+    &-images {
+      display: flex;
+      transition: transform 0.7s ease-in-out;
+    }
 
     &-img {
-      min-width: calc($index * 10);
-      max-height: calc($index * 20);
-      border-radius: 8px;
+      padding: 0 1vw;
 
-      &:nth-child(3) {
-        margin: 0 1%;
+      img {
+        width: 27vw;
+        border-radius: 8px;
       }
     }
 
-    &-btn-left,
-    &-btn-right {
-      position: absolute;
-      top: 50%;
-      background: none;
-      color: #fafafa;
-      font-size: 30px;
-      border: none;
-      cursor: pointer;
-    }
-
-    &-btn-left {
-      left: 0;
-    }
-
-    &-btn-right {
-      right: 0;
-    }
-  }
-
-  @media (max-width: $tablet) {
-    &-text {
-      font-size: 1.5rem;
-    }
-
-    .slider {
-      justify-content: center;
-
-      &-img {
-        width: calc((1vw + 1vh) * 31);
-        max-height: unset;
+    @media (max-width: $tablet) {
+      &-text {
+        font-size: 1.5rem;
       }
 
-      &-img:nth-child(3),
-      &-img:nth-child(4) {
-        display: none;
+      .slider {
+        &-img {
+          img {
+            width: 85vw;
+          }
+        }
       }
     }
-  }
 
-  @media (max-width: $mobile) {
-    &-text {
-      font-size: 1.2rem;
+    @media (max-width: $mobile) {
+      &-text {
+        font-size: 1.2rem;
+      }
     }
   }
 }

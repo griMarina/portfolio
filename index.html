@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marina Grigoreva | Web developer</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <script
       src="https://kit.fontawesome.com/565da2c2c6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -200,16 +205,45 @@
           through travel and photography. Furthermore, I find joy in reading,
           drawing, and staying active through running and cycling.
         </p>
+
         <div class="slider">
-          <button class="slider-btn-left">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <img class="slider-img" src="./img/slider/1.jpeg" alt="" />
-          <img class="slider-img" src="./img/slider/2.jpeg" alt="" />
-          <img class="slider-img" src="./img/slider/3.jpeg" alt="" />
-          <button class="slider-btn-right">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          <div class="slider-buttons">
+            <button class="slider-btn-previous">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn-next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="slider-images">
+            <figure class="slider-img">
+              <img src="./img/slider/1.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/2.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/3.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/4.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/5.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/6.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/7.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/8.jpeg" alt="" />
+            </figure>
+            <figure class="slider-img">
+              <img src="./img/slider/9.jpeg" alt="" />
+            </figure>
+          </div>
         </div>
       </section>
       <section id="contact" class="contact container">

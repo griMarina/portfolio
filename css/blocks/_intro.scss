@@ -17,14 +17,14 @@
     letter-spacing: calc($index * 0.5);
 
     &-name {
-      font-size: $h1-size;
+      font-size: calc($index * 4);
       margin-bottom: calc((1vw + 1vh) * 2);
       line-height: 0.9;
       width: min-content;
     }
 
     &-title {
-      font-size: $h2-size;
+      font-size: calc($index * 2.5);
     }
   }
 
