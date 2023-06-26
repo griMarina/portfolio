@@ -510,6 +510,7 @@ h3 {
 .hobbies .slider-img {
   padding: 0 1vw;
   position: relative;
+  display: flex;
 }
 .hobbies .slider-img img {
   width: 27vw;
@@ -519,9 +520,9 @@ h3 {
   opacity: 0;
   position: absolute;
   color: #4b514f;
-  bottom: 2vh;
+  bottom: 1vw;
   background-color: rgba(220, 238, 234, 0.7803921569);
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 12px;
   left: 2vw;
   transition: all 0.5s ease-in-out;
