@@ -51,6 +51,8 @@ function handleTouchMove(event) {
   }
 
   touchStartX = 0;
+
+  event.preventDefault();
 }
 
 function handleTouchEnd() {

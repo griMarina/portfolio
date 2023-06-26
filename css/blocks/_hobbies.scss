@@ -52,10 +52,32 @@
 
     &-img {
       padding: 0 1vw;
+      position: relative;
 
       img {
         width: 27vw;
         border-radius: 8px;
+      }
+
+      figcaption {
+        opacity: 0;
+        position: absolute;
+        color: $dark-color;
+        bottom: 2vh;
+        background-color: #dceeeac7;
+        border-radius: 5px;
+        padding: 12px;
+        left: 2vw;
+
+        transition: all 0.5s ease-in-out;
+        transform: translateY(50%);
+      }
+
+      &:hover {
+        figcaption {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
 
