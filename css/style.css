@@ -19,16 +19,19 @@ h3 {
   font-family: inherit;
 }
 
-.container {
-  padding: 0 7vw;
+#content,
+.intro,
+.title {
+  will-change: transform;
 }
 
-.hidden {
-  position: absolute;
-  left: -999999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+#smooth-content {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.container {
+  padding: 0 7vw;
 }
 
 .link {
@@ -36,21 +39,6 @@ h3 {
   color: inherit;
 }
 
-@media (max-width: 992px) {
-  .center {
-    padding: 0 10%;
-  }
-}
-@media (max-width: 768px) {
-  .center {
-    padding: 0 7%;
-  }
-}
-@media (max-width: 576px) {
-  .center {
-    padding: 0 5%;
-  }
-}
 .nav {
   min-height: 80px;
   display: flex;
@@ -190,13 +178,14 @@ h3 {
 }
 
 .intro {
+  position: relative;
   height: calc((1vw + 1vh) * 30);
 }
 .intro-img {
   width: calc((1vw + 1vh) * 28);
   position: absolute;
   left: 45vw;
-  top: 0;
+  top: -55vh;
   z-index: -1;
   overflow-x: hidden;
 }
@@ -208,7 +197,7 @@ h3 {
 }
 .intro-headings-name {
   font-size: calc((1vw + 1vh) * 4);
-  margin-bottom: calc((1vw + 1vh) * 2);
+  padding-bottom: calc((1vw + 1vh) * 2);
   line-height: 0.9;
   width: -moz-min-content;
   width: min-content;
@@ -221,7 +210,6 @@ h3 {
     width: calc((1vw + 1vh) * 20);
     left: unset;
     right: 0;
-    top: 5vh;
   }
   .intro-headings {
     margin-top: 50vh;
@@ -234,9 +222,9 @@ h3 {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: calc((1vw + 1vh) * 2 * 6);
+  padding-bottom: calc((1vw + 1vh) * 2 * 6);
 }
-.about-title {
+.about .title {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
@@ -272,9 +260,9 @@ h3 {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: calc((1vw + 1vh) * 2 * 6);
+  padding-bottom: calc((1vw + 1vh) * 2 * 6);
 }
-.skills-title {
+.skills .title {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
@@ -319,9 +307,9 @@ h3 {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: calc((1vw + 1vh) * 2 * 4);
+  padding-bottom: calc((1vw + 1vh) * 2 * 4);
 }
-.projects-title {
+.projects .title {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
@@ -463,7 +451,7 @@ h3 {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: calc((1vw + 1vh) * 2 * 6);
+  padding-bottom: calc((1vw + 1vh) * 2 * 6);
 }
 .hobbies-title {
   position: absolute;
@@ -555,9 +543,9 @@ h3 {
   align-items: center;
   text-align: center;
   color: #4b514f;
-  margin-bottom: calc((1vw + 1vh) * 2 * 4);
+  padding-bottom: calc((1vw + 1vh) * 2 * 4);
 }
-.contact-title {
+.contact .title {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);

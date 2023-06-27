@@ -9,9 +9,7 @@ body {
   background-color: #c0e8df;
   background-attachment: fixed;
   color: #ffffff;
-  // font-family: "Cormorant Garamond", serif;
   font-family: "Montaga", serif;
-  // font-family: "Stoke", serif;
   overflow-x: hidden;
 }
 
@@ -21,37 +19,30 @@ h3 {
   font-family: inherit;
 }
 
+#content,
+.intro,
+.title {
+  will-change: transform;
+}
+
+#smooth-content {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
 .container {
   padding: 0 7vw;
 }
 
-.hidden {
-  position: absolute;
-  left: -999999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
+// .hidden {
+//   position: absolute;
+//   left: -999999px;
+//   width: 1px;
+//   height: 1px;
+//   opacity: 0;
+// }
 
 .link {
   text-decoration: none;
   color: inherit;
-}
-
-@media (max-width: $laptop) {
-  .center {
-    padding: 0 10%;
-  }
-}
-
-@media (max-width: $tablet) {
-  .center {
-    padding: 0 7%;
-  }
-}
-
-@media (max-width: $mobile) {
-  .center {
-    padding: 0 5%;
-  }
 }

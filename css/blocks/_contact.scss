@@ -6,9 +6,9 @@
   align-items: center;
   text-align: center;
   color: $dark-color;
-  margin-bottom: calc($gallery-gap * 4);
+  padding-bottom: calc($gallery-gap * 4);
 
-  &-title {
+  .title {
     @include slide-header;
     top: -13vh;
   }

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: calc($gallery-gap * 6);
+  padding-bottom: calc($gallery-gap * 6);
 
   &-title {
     @include slide-header;

@@ -1,3 +1,126 @@
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+// create the smooth scroller FIRST!
+let scroller = ScrollSmoother.create({
+  smooth: 1.5,
+  effects: true,
+});
+
+// ScrollTrigger.normalizeScroll(true);
+
+// ScrollSmoother.create({
+//   trigger: ".intro",
+//   start: "top center",
+//   end: "bottom center",
+//   scrub: true,
+//   onUpdate: (self) => {
+//     const progress = self.progress.toFixed(2);
+
+//     // Adjust the scrolling speed for intro-img
+//     const introImgSpeed = 0.5; // Modify this value as needed
+//     const introImgY = -progress * introImgSpeed * 100;
+//     gsap.to(".intro-img", { y: -introImgY });
+
+//     // Adjust the scrolling speed for intro-headings
+//     const introHeadingsSpeed = 1.5; // Modify this value as needed
+//     const introHeadingsY = -progress * introHeadingsSpeed * 100;
+//     gsap.to(".intro-headings", { y: introHeadingsY });
+//   },
+// });
+
+// ScrollSmoother.create({
+//   wrapper: ".wrapper",
+//   content: ".content",
+//   smooth: 1.2,
+//   effects: true,
+// });
+
+// gsap.fromTo(
+//   ".intro",
+//   { opacity: 1 },
+//   {
+//     opacity: 0,
+//     scrollTrigger: {
+//       trigger: ".intro",
+//       start: "top 20%",
+//       end: "bottom 30%",
+//       scrub: true,
+//     },
+//   }
+// );
+
+// gsap.fromTo(
+//   ".intro-img",
+//   { opacity: 1 },
+//   {
+//     opacity: 0,
+//     // y: -0,
+//     scrollTrigger: {
+//       trigger: ".intro-img",
+//       start: "top top",
+//       end: "bottom top",
+//       scrub: true,
+//     },
+//   }
+// );
+
+// gsap.fromTo(
+//   ".intro-headings",
+//   { opacity: 1 },
+//   {
+//     opacity: 0,
+//     // y: -100,
+//     scrollTrigger: {
+//       trigger: ".intro-headings",
+//       start: "top top",
+//       end: "bottom top",
+//       scrub: true,
+//     },
+//   }
+// );
+
+// const titles = document.querySelectorAll(".title");
+// console.log(titles);
+// titles.forEach((title) => {
+//   console.log(title);
+//   gsap.fromTo(
+//     title,
+//     { x: -500, opacity: 0 },
+//     {
+//       opacity: 1,
+//       x: 0,
+//       scrollTrigger: {
+//         trigger: title,
+//         start: "-850",
+//         end: "-100",
+//         scrub: true,
+//       },
+//     }
+//   );
+// });
+
+// Navigation links
+// document.addEventListener("DOMContentLoaded", function () {
+//   const navLinks = document.querySelectorAll(".nav-links a");
+
+//   navLinks.forEach(function (link) {
+//     link.addEventListener("click", function (event) {
+//       event.preventDefault();
+
+//       const toggle = document.getElementById("toggle");
+//       toggle.checked = false;
+
+//       const target = this.getAttribute("href");
+
+//       document.querySelector(target).scrollIntoView({
+//         behavior: "smooth",
+//         duration: 2000,
+//       });
+//     });
+//   });
+// });
+
+// Slider
 const previous = document.querySelector(".slider-btn-previous");
 const next = document.querySelector(".slider-btn-next");
 const images = document.querySelectorAll(".slider-img");
@@ -7,7 +130,6 @@ const imageWidth = images[0].clientWidth;
 let currentPosition = 0;
 let touchStartX = 0;
 
-// Event Listeners to previous and next buttons
 previous.addEventListener("click", () => swapImages("previous"));
 next.addEventListener("click", () => swapImages("next"));
 slider.addEventListener("touchstart", handleTouchStart);
@@ -39,7 +161,7 @@ function handleTouchStart(event) {
 }
 
 function handleTouchMove(event) {
-  if (touchStartX === 0) return;
+  event.preventDefault();
 
   const touchCurrentX = event.touches[0].clientX;
   const touchDiff = touchStartX - touchCurrentX;
@@ -51,61 +173,8 @@ function handleTouchMove(event) {
   }
 
   touchStartX = 0;
-
-  event.preventDefault();
 }
 
 function handleTouchEnd() {
   touchStartX = 0;
 }
-
-// const $menu = document.querySelector(".slider-images");
-// const $items = document.querySelectorAll(".slider-item");
-// const $images = document.querySelectorAll(".slider-item img");
-// // let menuWidth = $menu.clientWidth;
-// let itemWidth = $items[0].clientWidth;
-// let wrapWidth = $items.length * itemWidth;
-
-// console.log(itemWidth, wrapWidth);
-
-// let scrollSpeed = 0;
-// let oldScrollY = 0;
-// let scrollY = 0;
-// let y = 0;
-
-// const lerp = (v0, v1, t) => {
-//   return v0 * (1 - t) + v1 * t;
-// };
-
-// const dispose = (scroll) => {
-//   gsap.set($items, {
-//     x: (i) => {
-//       return i + scroll;
-//     },
-//     modifiers: {
-//       x: (x, target) => {
-//         const s = gsap.utils.wrap(
-//           -itemWidth,
-//           wrapWidth - itemWidth,
-//           parseInt(x)
-//         );
-//         return `${s}px`;
-//       },
-//     },
-//   });
-// };
-// dispose(0);
-
-// const handleMouseWheel = (e) => {
-//   scrollY -= e.deltaX * 0.9;
-// };
-
-// $menu.addEventListener("mousewheel", handleMouseWheel);
-
-// const render = () => {
-//   requestAnimationFrame(render);
-//   y = lerp(y, scrollY, 0.1);
-//   dispose(y);
-// };
-
-// render();

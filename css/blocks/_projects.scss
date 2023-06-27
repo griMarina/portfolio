@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: calc($gallery-gap * 4);
+  padding-bottom: calc($gallery-gap * 4);
 
-  &-title {
+  .title {
     @include slide-header;
     top: -13vh;
   }

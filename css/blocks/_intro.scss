@@ -1,11 +1,12 @@
 .intro {
+  position: relative;
   height: calc($index * 30);
 
   &-img {
     width: calc($index * 28);
     position: absolute;
     left: 45vw;
-    top: 0;
+    top: -55vh;
     z-index: -1;
     overflow-x: hidden;
   }
@@ -18,7 +19,7 @@
 
     &-name {
       font-size: calc($index * 4);
-      margin-bottom: calc((1vw + 1vh) * 2);
+      padding-bottom: calc((1vw + 1vh) * 2);
       line-height: 0.9;
       width: min-content;
     }
@@ -33,7 +34,7 @@
       width: calc($index * 20);
       left: unset;
       right: 0;
-      top: 5vh;
+      // top: 5vh;
     }
 
     &-headings {
