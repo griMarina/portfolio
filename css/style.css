@@ -10,7 +10,6 @@ body {
   background-attachment: fixed;
   color: #ffffff;
   font-family: "Montaga", serif;
-  overscroll-behavior: none;
   overflow-x: hidden;
 }
 
