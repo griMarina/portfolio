@@ -1,5 +1,5 @@
 .nav {
-  min-height: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   position: relative;
@@ -7,7 +7,10 @@
   &-logo {
     font-size: 2.5rem;
     cursor: pointer;
-    margin-left: 7vw;
+    // margin-left: 7vw;
+    position: fixed;
+    left: 7vw;
+    z-index: 4;
   }
 
   #toggle {
@@ -112,7 +115,7 @@
     li {
       position: relative;
       opacity: 0;
-      margin-bottom: calc($index * 5);
+      padding-bottom: calc($index * 5);
 
       transform: translateY(500%);
 

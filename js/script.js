@@ -1,124 +1,140 @@
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
-// create the smooth scroller FIRST!
-let scroller = ScrollSmoother.create({
+// Smooth scroller
+ScrollSmoother.create({
   smooth: 1.5,
   effects: true,
 });
 
-// ScrollTrigger.normalizeScroll(true);
-
-// ScrollSmoother.create({
-//   trigger: ".intro",
-//   start: "top center",
-//   end: "bottom center",
-//   scrub: true,
-//   onUpdate: (self) => {
-//     const progress = self.progress.toFixed(2);
-
-//     // Adjust the scrolling speed for intro-img
-//     const introImgSpeed = 0.5; // Modify this value as needed
-//     const introImgY = -progress * introImgSpeed * 100;
-//     gsap.to(".intro-img", { y: -introImgY });
-
-//     // Adjust the scrolling speed for intro-headings
-//     const introHeadingsSpeed = 1.5; // Modify this value as needed
-//     const introHeadingsY = -progress * introHeadingsSpeed * 100;
-//     gsap.to(".intro-headings", { y: introHeadingsY });
-//   },
-// });
-
-// ScrollSmoother.create({
-//   wrapper: ".wrapper",
-//   content: ".content",
-//   smooth: 1.2,
-//   effects: true,
-// });
-
-// gsap.fromTo(
-//   ".intro",
-//   { opacity: 1 },
-//   {
-//     opacity: 0,
-//     scrollTrigger: {
-//       trigger: ".intro",
-//       start: "top 20%",
-//       end: "bottom 30%",
-//       scrub: true,
-//     },
-//   }
-// );
-
-// gsap.fromTo(
-//   ".intro-img",
-//   { opacity: 1 },
-//   {
-//     opacity: 0,
-//     // y: -0,
-//     scrollTrigger: {
-//       trigger: ".intro-img",
-//       start: "top top",
-//       end: "bottom top",
-//       scrub: true,
-//     },
-//   }
-// );
-
-// gsap.fromTo(
-//   ".intro-headings",
-//   { opacity: 1 },
-//   {
-//     opacity: 0,
-//     // y: -100,
-//     scrollTrigger: {
-//       trigger: ".intro-headings",
-//       start: "top top",
-//       end: "bottom top",
-//       scrub: true,
-//     },
-//   }
-// );
-
-// const titles = document.querySelectorAll(".title");
-// console.log(titles);
-// titles.forEach((title) => {
-//   console.log(title);
-//   gsap.fromTo(
-//     title,
-//     { x: -500, opacity: 0 },
-//     {
-//       opacity: 1,
-//       x: 0,
-//       scrollTrigger: {
-//         trigger: title,
-//         start: "-850",
-//         end: "-100",
-//         scrub: true,
-//       },
-//     }
-//   );
-// });
-
 // Navigation links
-// document.addEventListener("DOMContentLoaded", function () {
-//   const navLinks = document.querySelectorAll(".nav-links a");
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav-link");
 
-//   navLinks.forEach(function (link) {
-//     link.addEventListener("click", function (event) {
-//       event.preventDefault();
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
 
-//       const toggle = document.getElementById("toggle");
-//       toggle.checked = false;
+      const toggle = document.getElementById("toggle");
+      toggle.checked = false;
 
-//       const target = this.getAttribute("href");
+      const target = this.getAttribute("href");
 
-//       document.querySelector(target).scrollIntoView({
-//         behavior: "smooth",
-//         duration: 2000,
-//       });
-//     });
-//   });
-// });
+      gsap.to(window, {
+        duration: 0.5,
+        scrollTo: { y: target, offsetY: 100 },
+      });
+    });
+  });
+});
+
+// Intro section
+gsap.fromTo(
+  ".intro",
+  { opacity: 1 },
+  {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".intro",
+      start: "-50",
+      end: "300",
+      scrub: true,
+    },
+  }
+);
+
+// Titles h2
+const titles = document.querySelectorAll(".title");
+titles.forEach((title) => {
+  gsap.fromTo(
+    title,
+    { x: -400 },
+    {
+      x: 0,
+      scrollTrigger: {
+        trigger: title,
+        start: "-850",
+        end: "-150",
+        scrub: true,
+      },
+    }
+  );
+});
+
+const smoothHeadings = gsap.utils.toArray(".smooth-headings");
+smoothHeadings.forEach((el) => {
+  gsap.fromTo(
+    el,
+    { opacity: 1 },
+    {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: el,
+        start: "-100",
+        end: "100",
+        scrub: true,
+      },
+    }
+  );
+});
+
+const smoothTexts = gsap.utils.toArray(".smooth-text");
+smoothTexts.forEach((el) => {
+  gsap.fromTo(
+    el,
+    { x: 1000, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: el,
+        start: "-950",
+        end: "-300",
+        scrub: true,
+      },
+    }
+  );
+});
+
+// Projects
+const itemsLeft = gsap.utils.toArray(
+  ".projects-gallery-left .projects-gallery-item"
+);
+itemsLeft.forEach((item) => {
+  gsap.fromTo(
+    item,
+    { x: -50, opacity: 0 },
+    {
+      opacity: 1,
+      x: 0,
+      scrollTrigger: {
+        trigger: item,
+        start: "-900",
+        end: "-50",
+        scrub: true,
+      },
+    }
+  );
+});
+
+const itemsRight = gsap.utils.toArray(
+  ".projects-gallery-right .projects-gallery-item"
+);
+itemsRight.forEach((item) => {
+  gsap.fromTo(
+    item,
+    { x: 50, opacity: 0 },
+    {
+      opacity: 1,
+      x: 0,
+      scrollTrigger: {
+        trigger: item,
+        start: "-900",
+        end: "-150",
+        scrub: true,
+      },
+    }
+  );
+});
 
 // Slider
 const previous = document.querySelector(".slider-btn-previous");
@@ -163,6 +179,8 @@ function handleTouchStart(event) {
 function handleTouchMove(event) {
   event.preventDefault();
 
+  if (touchStartX === 0) return;
+
   const touchCurrentX = event.touches[0].clientX;
   const touchDiff = touchStartX - touchCurrentX;
 
@@ -178,3 +196,22 @@ function handleTouchMove(event) {
 function handleTouchEnd() {
   touchStartX = 0;
 }
+
+images.forEach((item, index) => {
+  let start = -950 + index * 25;
+  let end = -20 + index * 5;
+  gsap.fromTo(
+    item,
+    { x: 400, opacity: 0 },
+    {
+      opacity: 1,
+      x: 0,
+      scrollTrigger: {
+        trigger: item,
+        start: `${start}`,
+        end: `${end}`,
+        scrub: true,
+      },
+    }
+  );
+});

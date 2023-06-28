@@ -1,11 +1,11 @@
-.hobbies {
+.interests {
   height: fit-content;
   display: flex;
   flex-direction: column;
   position: relative;
   padding-bottom: calc($gallery-gap * 6);
 
-  &-title {
+  .title {
     @include slide-header;
     top: -13vh;
   }
