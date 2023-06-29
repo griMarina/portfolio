@@ -30,6 +30,7 @@ h3 {
 #smooth-content {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+  overflow-x: hidden;
 }
 
 .container {
