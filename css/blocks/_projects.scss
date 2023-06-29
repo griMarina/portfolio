@@ -7,6 +7,7 @@
 
   .title {
     @include slide-header;
+    left: -7vw;
     top: -13vh;
   }
 
@@ -36,7 +37,6 @@
 
     &-right {
       .project-desc {
-        // margin: 0;
         margin-top: calc($gallery-gap * 8);
         align-items: flex-end;
         text-align: right;
@@ -75,9 +75,7 @@
         left: 0;
         right: 0;
         height: 100%;
-        // background-color: #dceeeae3;
         background-color: #131615a3;
-        // color: #2f3332;
         color: #fafafa;
         letter-spacing: 3px;
         display: flex;
@@ -132,7 +130,7 @@
   }
 
   @media (max-width: $laptop) {
-    &-title {
+    .title {
       top: -10vh;
     }
 
@@ -164,7 +162,7 @@
   }
 
   @media (max-width: $mobile) {
-    &-title {
+    .title {
       top: -7vh;
     }
   }

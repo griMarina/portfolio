@@ -10,6 +10,7 @@
 
   .title {
     @include slide-header;
+    left: -7vw;
     top: -13vh;
   }
 
@@ -62,7 +63,7 @@
   }
 
   @media (max-width: $laptop) {
-    &-title {
+    .title {
       top: -10vh;
     }
   }
@@ -91,7 +92,7 @@
   }
 
   @media (max-width: $mobile) {
-    &-title {
+    .title {
       top: -7vh;
     }
 

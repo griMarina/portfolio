@@ -10,9 +10,7 @@ body {
   background-attachment: fixed;
   color: #ffffff;
   font-family: "Montaga", serif;
-  // overscroll-behavior: ;
-  // margin: 0;
-  // padding: 0;
+  overscroll-behavior: none;
   overflow-x: hidden;
 }
 
@@ -26,7 +24,11 @@ h3 {
 .intro,
 .about,
 .skills,
-.title {
+.title,
+.smooth-headings,
+.smooth-text,
+.projects-gallery-item,
+.slider-images {
   will-change: transform;
 }
 
@@ -39,14 +41,6 @@ h3 {
 .container {
   padding: 0 7vw;
 }
-
-// .hidden {
-//   position: absolute;
-//   left: -999999px;
-//   width: 1px;
-//   height: 1px;
-//   opacity: 0;
-// }
 
 .link {
   text-decoration: none;

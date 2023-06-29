@@ -7,6 +7,7 @@
 
   .title {
     @include slide-header;
+    left: -7vw;
     top: -13vh;
   }
 
@@ -81,25 +82,34 @@
         }
       }
     }
+  }
+  @media (max-width: $laptop) {
+    .title {
+      top: -10vh;
+    }
+  }
 
-    @media (max-width: $tablet) {
-      &-text {
-        font-size: 1.5rem;
-      }
+  @media (max-width: $tablet) {
+    &-text {
+      font-size: 1.5rem;
+    }
 
-      .slider {
-        &-img {
-          img {
-            width: 85vw;
-          }
+    .slider {
+      &-img {
+        img {
+          width: 85vw;
         }
       }
     }
+  }
 
-    @media (max-width: $mobile) {
-      &-text {
-        font-size: 1.2rem;
-      }
+  @media (max-width: $mobile) {
+    .title {
+      top: -7vh;
+    }
+
+    &-text {
+      font-size: 1.2rem;
     }
   }
 }

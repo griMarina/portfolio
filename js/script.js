@@ -87,27 +87,70 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  fadeOut(".intro", -50, 300);
+  if (window.innerWidth <= 768) {
+    fadeOut(".intro", -100, 200);
+  } else {
+    fadeOut(".intro", -50, 300);
+  }
 
   const titles = document.querySelectorAll(".title");
-  titles.forEach((title) => slideTo(title, -400, -850, -150));
+  titles.forEach((title) => {
+    if (window.innerWidth <= 768) {
+      slideTo(title, -500, -850, -150);
+    } else {
+      slideTo(title, -400, -850, -150);
+    }
+  });
 
   const smoothHeadings = document.querySelectorAll(".smooth-headings");
-  smoothHeadings.forEach((el) => fadeOut(el, -100, 100));
+  smoothHeadings.forEach((el) => {
+    if (window.innerWidth <= 768) {
+      fadeOut(el, 0, 300);
+    } else {
+      fadeOut(el, -100, 100);
+    }
+  });
 
   const smoothTexts = document.querySelectorAll(".smooth-text");
-  smoothTexts.forEach((el) => slideFrom(el, 1000, -950, -300));
+  smoothTexts.forEach((el) => {
+    if (window.innerWidth <= 768) {
+      slideFrom(el, 500, -700, -300);
+    } else {
+      slideFrom(el, 1000, -950, -300);
+    }
+  });
 
   // Projects
-  const itemsLeft = document.querySelectorAll(
-    ".projects-gallery-left .projects-gallery-item"
-  );
-  itemsLeft.forEach((el) => slideFrom(el, -50, -900, -200));
 
-  const itemsRight = document.querySelectorAll(
-    ".projects-gallery-right .projects-gallery-item"
-  );
-  itemsRight.forEach((el) => slideFrom(el, 50, -900, -200));
+  if (window.innerWidth <= 768) {
+    const items = document.querySelectorAll(".projects-gallery-item");
+    items.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "-500",
+            end: "-200",
+            scrub: true,
+          },
+        }
+      );
+    });
+  } else {
+    const itemsLeft = document.querySelectorAll(
+      ".projects-gallery-left .projects-gallery-item"
+    );
+    const itemsRight = document.querySelectorAll(
+      ".projects-gallery-right .projects-gallery-item"
+    );
+
+    itemsLeft.forEach((el) => slideFrom(el, -50, -900, -200));
+    itemsRight.forEach((el) => slideFrom(el, 50, -900, -200));
+  }
 
   // Slider
   const previous = document.querySelector(".slider-btn-previous");
