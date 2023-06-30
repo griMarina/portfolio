@@ -1,112 +1,112 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
-function fadeOut(element, start, end) {
-  gsap.fromTo(
-    element,
-    { opacity: 1 },
-    {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: element,
-        start: `${start}`,
-        end: `${end}`,
-        scrub: true,
-      },
-    }
-  );
-}
-
-function slideX(element, from, start, end) {
-  gsap.fromTo(
-    element,
-    { x: from, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: element,
-        start: `${start}`,
-        end: `${end}`,
-        scrub: true,
-      },
-    }
-  );
-}
-
-function slideY(element, from, start, end) {
-  gsap.fromTo(
-    element,
-    { y: from, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: element,
-        start: `${start}`,
-        end: `${end}`,
-        scrub: true,
-      },
-    }
-  );
-}
-
-function scrollMobile() {
-  fadeOut(".intro", -100, 200);
-
-  const titles = document.querySelectorAll(".title");
-  titles.forEach((title) => slideX(title, -500, -850, -150));
-
-  const smoothHeadings = document.querySelectorAll(".smooth-headings");
-  smoothHeadings.forEach((el) => fadeOut(el, 0, 300));
-
-  const smoothTexts = document.querySelectorAll(".smooth-text");
-  smoothTexts.forEach((el) => slideX(el, 500, -850, -150));
-
-  const items = document.querySelectorAll(".projects-gallery-item");
-  items.forEach((el) => slideY(el, 50, -850, -100));
-
-  const slider = document.querySelector(".slider-images");
-  slideY(slider, 200, -850, -400);
-
-  slideY(".contact-form", 50, -850, -100);
-}
-
-function scrollDesktop() {
-  fadeOut(".intro", -10, 300);
-
-  const titles = document.querySelectorAll(".title");
-  titles.forEach((title) => slideX(title, -400, -850, -150));
-
-  const smoothHeadings = document.querySelectorAll(".smooth-headings");
-  smoothHeadings.forEach((el) => fadeOut(el, -100, 100));
-
-  const smoothTexts = document.querySelectorAll(".smooth-text");
-  smoothTexts.forEach((el) => slideX(el, 1000, -950, -150));
-
-  const itemsLeft = document.querySelectorAll(
-    ".projects-gallery-left .projects-gallery-item"
-  );
-  const itemsRight = document.querySelectorAll(
-    ".projects-gallery-right .projects-gallery-item"
-  );
-  itemsLeft.forEach((el) => slideX(el, -20, -1200, -100));
-  itemsRight.forEach((el) => slideX(el, 20, -1200, -100));
-
-  const slider = document.querySelector(".slider-images");
-  slideY(slider, 400, -950, -400);
-
-  slideY(".contact-form", 50, -850, -100);
-}
-
-// Smooth scroller
-if (ScrollTrigger.isTouch !== 1) {
-  ScrollSmoother.create({
-    smooth: 1.5,
-    effects: true,
-  });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
+  function fadeOut(element, start, end) {
+    gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: element,
+          start: `${start}`,
+          end: `${end}`,
+          scrub: true,
+        },
+      }
+    );
+  }
+
+  function slideX(element, from, start, end) {
+    gsap.fromTo(
+      element,
+      { x: from, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: `${start}`,
+          end: `${end}`,
+          scrub: true,
+        },
+      }
+    );
+  }
+
+  function slideY(element, from, start, end) {
+    gsap.fromTo(
+      element,
+      { y: from, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: `${start}`,
+          end: `${end}`,
+          scrub: true,
+        },
+      }
+    );
+  }
+
+  function scrollMobile() {
+    fadeOut(".intro", -100, 200);
+
+    const titles = document.querySelectorAll(".title");
+    titles.forEach((title) => slideX(title, -500, -850, -150));
+
+    const smoothHeadings = document.querySelectorAll(".smooth-headings");
+    smoothHeadings.forEach((el) => fadeOut(el, 0, 300));
+
+    const smoothTexts = document.querySelectorAll(".smooth-text");
+    smoothTexts.forEach((el) => slideX(el, 500, -850, -150));
+
+    const items = document.querySelectorAll(".projects-gallery-item");
+    items.forEach((el) => slideY(el, 50, -850, -100));
+
+    const slider = document.querySelector(".slider-images");
+    slideY(slider, 50, -850, -400);
+
+    slideY(".contact-form", 50, -850, -100);
+  }
+
+  function scrollDesktop() {
+    fadeOut(".intro", -10, 300);
+
+    const titles = document.querySelectorAll(".title");
+    titles.forEach((title) => slideX(title, -400, -850, -150));
+
+    const smoothHeadings = document.querySelectorAll(".smooth-headings");
+    smoothHeadings.forEach((el) => fadeOut(el, -100, 100));
+
+    const smoothTexts = document.querySelectorAll(".smooth-text");
+    smoothTexts.forEach((el) => slideX(el, 1000, -950, -150));
+
+    const itemsLeft = document.querySelectorAll(
+      ".projects-gallery-left .projects-gallery-item"
+    );
+    const itemsRight = document.querySelectorAll(
+      ".projects-gallery-right .projects-gallery-item"
+    );
+    itemsLeft.forEach((el) => slideX(el, -20, -1200, -100));
+    itemsRight.forEach((el) => slideX(el, 20, -1200, -100));
+
+    const slider = document.querySelector(".slider-images");
+    slideY(slider, 50, -850, -400);
+
+    slideY(".contact-form", 50, -850, -100);
+  }
+
+  // Smooth scroller
+  if (ScrollTrigger.isTouch !== 1) {
+    ScrollSmoother.create({
+      smooth: 1.5,
+      effects: true,
+    });
+  }
+
   // Navigation links
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
