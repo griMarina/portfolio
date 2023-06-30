@@ -65,7 +65,7 @@ function scrollMobile() {
   const items = document.querySelectorAll(".projects-gallery-item");
   items.forEach((el) => slideY(el, 50, -850, -100));
 
-  const slider = document.querySelector(".slider");
+  const slider = document.querySelector(".slider-images");
   slideY(slider, 200, -850, -400);
 
   slideY(".contact-form", 50, -850, -100);
@@ -92,7 +92,7 @@ function scrollDesktop() {
   itemsLeft.forEach((el) => slideX(el, -20, -1200, -100));
   itemsRight.forEach((el) => slideX(el, 20, -1200, -100));
 
-  const slider = document.querySelector(".slider");
+  const slider = document.querySelector(".slider-images");
   slideY(slider, 400, -950, -400);
 
   slideY(".contact-form", 50, -850, -100);
