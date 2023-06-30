@@ -494,8 +494,6 @@ h3 {
   position: absolute;
   top: 45%;
   background: none;
-  color: #fafafa;
-  font-size: 40px;
   border: none;
   z-index: 2;
   cursor: pointer;
@@ -505,6 +503,7 @@ h3 {
 }
 .interests .slider-buttons .slider-btn-next {
   right: 0;
+  transform: rotate(180deg);
 }
 .interests .slider-images {
   display: flex;
@@ -671,8 +670,8 @@ h3 {
   display: flex;
   justify-content: space-between;
 }
-.footer-links a:hover {
-  color: #4b514f;
+.footer-links a:hover svg {
+  fill: #4b514f;
 }
 .footer-logo {
   font-size: 1.5rem;

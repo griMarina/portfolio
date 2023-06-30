@@ -30,8 +30,8 @@
         position: absolute;
         top: 45%;
         background: none;
-        color: #fafafa;
-        font-size: 40px;
+        // color: #fafafa;
+        // font-size: 40px;
         border: none;
         z-index: 2;
         cursor: pointer;
@@ -43,6 +43,7 @@
 
       .slider-btn-next {
         right: 0;
+        transform: rotate(180deg);
       }
     }
 
