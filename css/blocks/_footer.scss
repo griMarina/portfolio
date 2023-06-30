@@ -13,8 +13,18 @@
     display: flex;
     justify-content: space-between;
 
-    a:hover svg {
-      fill: $dark-color;
+    a svg {
+      vertical-align: bottom;
+    }
+
+    .footer-logo:hover {
+      color: $dark-color;
+    }
+
+    a:hover {
+      svg path {
+        fill: $dark-color;
+      }
     }
   }
 
@@ -31,9 +41,5 @@
     li {
       list-style: none;
     }
-  }
-
-  .fab {
-    font-size: 1.5rem;
   }
 }

@@ -60,13 +60,13 @@ function scrollMobile() {
   smoothHeadings.forEach((el) => fadeOut(el, 0, 300));
 
   const smoothTexts = document.querySelectorAll(".smooth-text");
-  smoothTexts.forEach((el) => slideX(el, 500, -700, -300));
+  smoothTexts.forEach((el) => slideX(el, 500, -850, -150));
 
   const items = document.querySelectorAll(".projects-gallery-item");
   items.forEach((el) => slideY(el, 50, -850, -100));
 
-  const images = document.querySelectorAll(".slider-img");
-  images.forEach((el) => slideY(el, 50, -850, -100));
+  const slider = document.querySelector(".slider");
+  slideY(slider, 200, -850, -400);
 
   slideY(".contact-form", 50, -850, -100);
 }
@@ -81,7 +81,7 @@ function scrollDesktop() {
   smoothHeadings.forEach((el) => fadeOut(el, -100, 100));
 
   const smoothTexts = document.querySelectorAll(".smooth-text");
-  smoothTexts.forEach((el) => slideX(el, 1000, -950, -300));
+  smoothTexts.forEach((el) => slideX(el, 1000, -950, -150));
 
   const itemsLeft = document.querySelectorAll(
     ".projects-gallery-left .projects-gallery-item"
@@ -92,26 +92,21 @@ function scrollDesktop() {
   itemsLeft.forEach((el) => slideX(el, -20, -1200, -100));
   itemsRight.forEach((el) => slideX(el, 20, -1200, -100));
 
-  const images = document.querySelectorAll(".slider-img");
-  images.forEach((el, index) => {
-    let start = -750 + index * 60;
-    let end = -490 + index * 35;
-
-    slideX(el, 400, start, end);
-  });
+  const slider = document.querySelector(".slider");
+  slideY(slider, 400, -950, -400);
 
   slideY(".contact-form", 50, -850, -100);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Smooth scroller
-  if (ScrollTrigger.isTouch !== 1) {
-    ScrollSmoother.create({
-      smooth: 1.5,
-      effects: true,
-    });
-  }
+// Smooth scroller
+if (ScrollTrigger.isTouch !== 1) {
+  ScrollSmoother.create({
+    smooth: 1.5,
+    effects: true,
+  });
+}
 
+document.addEventListener("DOMContentLoaded", function () {
   // Navigation links
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {

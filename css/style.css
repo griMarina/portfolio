@@ -21,14 +21,13 @@ h3 {
 }
 
 #smooth-content,
-.intro,
-.about,
-.skills,
+.intro-img,
+.intro-headings,
 .title,
 .smooth-headings,
 .smooth-text,
 .projects-gallery-item,
-.slider-images {
+.slider {
   will-change: transform;
 }
 
@@ -670,7 +669,13 @@ h3 {
   display: flex;
   justify-content: space-between;
 }
-.footer-links a:hover svg {
+.footer-links a svg {
+  vertical-align: bottom;
+}
+.footer-links .footer-logo:hover {
+  color: #4b514f;
+}
+.footer-links a:hover svg path {
   fill: #4b514f;
 }
 .footer-logo {
@@ -684,9 +689,6 @@ h3 {
 }
 .footer-media li {
   list-style: none;
-}
-.footer .fab {
-  font-size: 1.5rem;
 }
 
 @font-face {
