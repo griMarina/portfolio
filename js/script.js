@@ -16,23 +16,7 @@ function fadeOut(element, start, end) {
   );
 }
 
-function slideTo(element, to, start, end) {
-  gsap.fromTo(
-    element,
-    { x: to },
-    {
-      x: 0,
-      scrollTrigger: {
-        trigger: element,
-        start: `${start}`,
-        end: `${end}`,
-        scrub: true,
-      },
-    }
-  );
-}
-
-function slideFrom(element, from, start, end) {
+function slideX(element, from, start, end) {
   gsap.fromTo(
     element,
     { x: from, opacity: 0 },
@@ -49,15 +33,85 @@ function slideFrom(element, from, start, end) {
   );
 }
 
-// Smooth scroller
-if (ScrollTrigger.isTouch !== 1) {
-  ScrollSmoother.create({
-    smooth: 1.5,
-    effects: true,
+function slideY(element, from, start, end) {
+  gsap.fromTo(
+    element,
+    { y: from, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: element,
+        start: `${start}`,
+        end: `${end}`,
+        scrub: true,
+      },
+    }
+  );
+}
+
+function scrollMobile() {
+  fadeOut(".intro", -100, 200);
+
+  const titles = document.querySelectorAll(".title");
+  titles.forEach((title) => slideX(title, -500, -850, -150));
+
+  const smoothHeadings = document.querySelectorAll(".smooth-headings");
+  smoothHeadings.forEach((el) => fadeOut(el, 0, 300));
+
+  const smoothTexts = document.querySelectorAll(".smooth-text");
+  smoothTexts.forEach((el) => slideX(el, 500, -700, -300));
+
+  const items = document.querySelectorAll(".projects-gallery-item");
+  items.forEach((el) => slideY(el, 50, -850, -100));
+
+  const images = document.querySelectorAll(".slider-img");
+  images.forEach((el) => slideY(el, 50, -850, -100));
+
+  slideY(".contact-form", 50, -850, -100);
+}
+
+function scrollDesktop() {
+  fadeOut(".intro", -10, 300);
+
+  const titles = document.querySelectorAll(".title");
+  titles.forEach((title) => slideX(title, -400, -850, -150));
+
+  const smoothHeadings = document.querySelectorAll(".smooth-headings");
+  smoothHeadings.forEach((el) => fadeOut(el, -100, 100));
+
+  const smoothTexts = document.querySelectorAll(".smooth-text");
+  smoothTexts.forEach((el) => slideX(el, 1000, -950, -300));
+
+  const itemsLeft = document.querySelectorAll(
+    ".projects-gallery-left .projects-gallery-item"
+  );
+  const itemsRight = document.querySelectorAll(
+    ".projects-gallery-right .projects-gallery-item"
+  );
+  itemsLeft.forEach((el) => slideX(el, -20, -1200, -100));
+  itemsRight.forEach((el) => slideX(el, 20, -1200, -100));
+
+  const images = document.querySelectorAll(".slider-img");
+  images.forEach((el, index) => {
+    let start = -750 + index * 60;
+    let end = -490 + index * 35;
+
+    slideX(el, 400, start, end);
   });
+
+  slideY(".contact-form", 50, -850, -100);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Smooth scroller
+  if (ScrollTrigger.isTouch !== 1) {
+    ScrollSmoother.create({
+      smooth: 1.5,
+      effects: true,
+    });
+  }
+
   // Navigation links
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
@@ -86,71 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-
-  if (window.innerWidth <= 768) {
-    fadeOut(".intro", -100, 200);
-  } else {
-    fadeOut(".intro", -50, 300);
-  }
-
-  const titles = document.querySelectorAll(".title");
-  titles.forEach((title) => {
-    if (window.innerWidth <= 768) {
-      slideTo(title, -500, -850, -150);
-    } else {
-      slideTo(title, -400, -850, -150);
-    }
-  });
-
-  const smoothHeadings = document.querySelectorAll(".smooth-headings");
-  smoothHeadings.forEach((el) => {
-    if (window.innerWidth <= 768) {
-      fadeOut(el, 0, 300);
-    } else {
-      fadeOut(el, -100, 100);
-    }
-  });
-
-  const smoothTexts = document.querySelectorAll(".smooth-text");
-  smoothTexts.forEach((el) => {
-    if (window.innerWidth <= 768) {
-      slideFrom(el, 500, -700, -300);
-    } else {
-      slideFrom(el, 1000, -950, -300);
-    }
-  });
-
-  // Projects
-
-  if (window.innerWidth <= 768) {
-    const items = document.querySelectorAll(".projects-gallery-item");
-    items.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: "-500",
-            end: "-200",
-            scrub: true,
-          },
-        }
-      );
-    });
-  } else {
-    const itemsLeft = document.querySelectorAll(
-      ".projects-gallery-left .projects-gallery-item"
-    );
-    const itemsRight = document.querySelectorAll(
-      ".projects-gallery-right .projects-gallery-item"
-    );
-
-    itemsLeft.forEach((el) => slideFrom(el, -50, -900, -200));
-    itemsRight.forEach((el) => slideFrom(el, 50, -900, -200));
-  }
 
   // Slider
   const previous = document.querySelector(".slider-btn-previous");
@@ -213,10 +202,10 @@ document.addEventListener("DOMContentLoaded", function () {
   slider.addEventListener("touchmove", handleTouchMove);
   slider.addEventListener("touchend", handleTouchEnd);
 
-  images.forEach((el, index) => {
-    let start = -750 + index * 60;
-    let end = -410 + index * 35;
-
-    slideFrom(el, 400, start, end);
-  });
+  // Scrolling
+  if (window.innerWidth <= 768) {
+    scrollMobile();
+  } else {
+    scrollDesktop();
+  }
 });

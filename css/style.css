@@ -429,6 +429,9 @@ h3 {
   .projects .title {
     top: -10vh;
   }
+  .projects a {
+    font-size: 0.8rem;
+  }
   .projects .project-desc {
     font-size: 1.2rem;
   }
