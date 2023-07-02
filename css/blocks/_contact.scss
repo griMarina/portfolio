@@ -6,7 +6,7 @@
   align-items: center;
   text-align: center;
   color: $dark-color;
-  padding-bottom: calc($gallery-gap * 4);
+  padding-bottom: calc($gallery-gap * 2);
 
   .title {
     @include slide-header;
@@ -29,7 +29,7 @@
 
     &-input {
       padding: 20px;
-      border: none;
+      border: 1px solid transparent;
       border-radius: 10px;
       font-size: 1.2rem;
       margin-bottom: 30px;
@@ -60,6 +60,17 @@
         background-color: #ffffff;
       }
     }
+  }
+
+  &-message {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    line-height: 2;
+    color: #4b514f;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(400px);
   }
 
   @media (max-width: $laptop) {
@@ -98,6 +109,10 @@
 
     &-text {
       font-size: 1.2rem;
+    }
+
+    &-message {
+      font-size: 1.5rem;
     }
   }
 }

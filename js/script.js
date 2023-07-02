@@ -67,9 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     items.forEach((el) => slideY(el, 50, -850, -100));
 
     const slider = document.querySelector(".slider-images");
-    slideY(slider, 50, -850, -400);
+    slideY(slider, 50, -950, -400);
 
-    slideY(".contact-form", 50, -850, -100);
+    slideY(".contact-form", 50, -850, -400);
   }
 
   function scrollDesktop() {
@@ -94,9 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
     itemsRight.forEach((el) => slideX(el, 20, -1200, -100));
 
     const slider = document.querySelector(".slider-images");
-    slideY(slider, 50, -850, -400);
+    slideY(slider, 50, -950, -400);
 
-    slideY(".contact-form", 50, -850, -100);
+    slideY(".contact-form", 50, -850, -400);
   }
 
   // Smooth scroller
@@ -105,6 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
       smooth: 1.5,
       effects: true,
     });
+  }
+
+  // Scrolling
+  if (window.innerWidth <= 768) {
+    scrollMobile();
+  } else {
+    scrollDesktop();
   }
 
   // Navigation links
@@ -197,10 +204,67 @@ document.addEventListener("DOMContentLoaded", function () {
   slider.addEventListener("touchmove", handleTouchMove);
   slider.addEventListener("touchend", handleTouchEnd);
 
-  // Scrolling
-  if (window.innerWidth <= 768) {
-    scrollMobile();
-  } else {
-    scrollDesktop();
+  // Form submit
+  const form = document.querySelector(".contact-form");
+
+  function animateFormOut() {
+    const tl = new TimelineMax();
+    tl.to(form, 0.5, { y: -400, opacity: 0, ease: Power1.easeOut });
+    tl.set(form, { visibility: "hidden" });
   }
+
+  function showMessage(message) {
+    const contact = document.querySelector(".contact");
+    const html = `<div class="contact-message container">
+      <span>${message}</span>
+    </div>`;
+    contact.insertAdjacentHTML("beforeend", html);
+
+    const contactMessage = document.querySelector(".contact-message");
+
+    contactMessage.offsetHeight;
+
+    const tl = new TimelineMax();
+    tl.to(contactMessage, 0.5, {
+      opacity: 1,
+      translateY: 0,
+      ease: Power1.easeOut,
+      delay: 0.3,
+    });
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(this);
+
+    const name = data.get("name").trim();
+    const email = data.get("email").trim();
+    const message = data.get("message").trim();
+
+    fetch("./mail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "OK") {
+          animateFormOut();
+          showMessage(data.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  form.addEventListener("submit", handleFormSubmit);
 });

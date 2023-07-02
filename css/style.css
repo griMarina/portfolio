@@ -522,7 +522,7 @@ h3 {
   position: absolute;
   color: #4b514f;
   bottom: 1vw;
-  background-color: rgba(220, 238, 234, 0.7803921569);
+  background-color: rgba(242, 243, 243, 0.6941176471);
   border-radius: 8px;
   padding: 12px;
   left: 2vw;
@@ -564,7 +564,7 @@ h3 {
   align-items: center;
   text-align: center;
   color: #4b514f;
-  padding-bottom: calc((1vw + 1vh) * 2 * 4);
+  padding-bottom: calc((1vw + 1vh) * 2 * 2);
 }
 .contact .title {
   position: absolute;
@@ -590,7 +590,7 @@ h3 {
 }
 .contact-form-input {
   padding: 20px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 10px;
   font-size: 1.2rem;
   margin-bottom: 30px;
@@ -622,6 +622,16 @@ h3 {
   cursor: pointer;
   background-color: #ffffff;
 }
+.contact-message {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  line-height: 2;
+  color: #4b514f;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(400px);
+}
 @media (max-width: 992px) {
   .contact .title {
     top: -10vh;
@@ -651,6 +661,9 @@ h3 {
   }
   .contact-text {
     font-size: 1.2rem;
+  }
+  .contact-message {
+    font-size: 1.5rem;
   }
 }
 
