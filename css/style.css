@@ -245,8 +245,12 @@ h3 {
 }
 .about-text {
   font-size: 1.7rem;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #4b514f;
+}
+.about span {
+  display: block;
+  margin-bottom: 15px;
 }
 @media (max-width: 992px) {
   .about .title {
@@ -261,6 +265,9 @@ h3 {
 @media (max-width: 576px) {
   .about .title {
     top: -7vh;
+  }
+  .about-text {
+    font-size: 1.3rem;
   }
 }
 
@@ -551,7 +558,7 @@ h3 {
     top: -7vh;
   }
   .interests-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -660,7 +667,7 @@ h3 {
     top: -7vh;
   }
   .contact-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .contact-message {
     font-size: 1.5rem;
