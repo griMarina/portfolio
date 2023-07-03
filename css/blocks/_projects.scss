@@ -123,6 +123,11 @@
       color: $light-color;
       margin-top: 20px;
     }
+
+    &-text i {
+      display: block;
+      margin-top: 3px;
+    }
   }
 
   .project-desc-mobile {

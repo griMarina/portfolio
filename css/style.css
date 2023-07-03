@@ -428,6 +428,10 @@ h3 {
   color: #809f98;
   margin-top: 20px;
 }
+.projects .project-desc-text i {
+  display: block;
+  margin-top: 3px;
+}
 .projects .project-desc-mobile {
   display: none;
 }
