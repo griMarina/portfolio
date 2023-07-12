@@ -273,3 +273,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 //   form.addEventListener("submit", handleFormSubmit);
 // });
+
+gsap.timeline().from("#img-first", {
+  x: -300,
+  opacity: 0,
+  ease: "back",
+  duration: 0.8,
+});

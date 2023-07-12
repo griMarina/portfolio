@@ -206,9 +206,9 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   width: calc((1vw + 1vh) * 29);
   text-align: center;
   position: absolute;
-  left: calc((1vw + 1vh) * 4);
+  left: calc((1vw + 1vh) * 3.5);
   bottom: 0;
-  font-size: calc((1vw + 1vh) * 2.4);
+  font-size: calc((1vw + 1vh) * 2.2);
   transform: rotate(-90deg);
   transform-origin: bottom left;
 }
@@ -216,9 +216,9 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   width: calc((1vw + 1vh) * 29);
   text-align: center;
   position: absolute;
-  right: calc((1vw + 1vh) * 4);
+  right: calc((1vw + 1vh) * 3.5);
   bottom: 0;
-  font-size: calc((1vw + 1vh) * 2.4);
+  font-size: calc((1vw + 1vh) * 2.2);
   color: #000;
   transform: rotate(90deg);
   transform-origin: bottom right;
@@ -235,12 +235,10 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   .intro-headings-name {
     width: calc((1vw + 1vh) * 25);
     left: calc((1vw + 1vh) * 3.2);
-    font-size: calc((1vw + 1vh) * 2.2);
   }
   .intro-headings-title {
     width: calc((1vw + 1vh) * 25);
     right: calc((1vw + 1vh) * 3.2);
-    font-size: calc((1vw + 1vh) * 2.2);
   }
 }
 @media only screen and (min-width: 992px) {
@@ -258,7 +256,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
     left: -26vw;
     top: 10vw;
     transform: none;
-    letter-spacing: 0.23rem;
+    letter-spacing: 0.2rem;
     text-align: left;
   }
   .intro-headings-title {
@@ -267,7 +265,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
     right: -26vw;
     bottom: 10vw;
     transform: none;
-    letter-spacing: 0.23rem;
+    letter-spacing: 0.2rem;
     text-align: right;
   }
 }
