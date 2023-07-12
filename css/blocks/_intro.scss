@@ -38,9 +38,10 @@
       position: absolute;
       left: calc($index * 3.5);
       bottom: 0;
-      font-size: calc($index * 2.2);
+      font-size: calc($index * 2);
       transform: rotate(-90deg);
       transform-origin: bottom left;
+      z-index: 4;
     }
 
     &-title {
@@ -49,10 +50,11 @@
       position: absolute;
       right: calc($index * 3.5);
       bottom: 0;
-      font-size: calc($index * 2.2);
+      font-size: calc($index * 2);
       color: #000;
       transform: rotate(90deg);
       transform-origin: bottom right;
+      z-index: 4;
     }
   }
 

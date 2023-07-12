@@ -17,8 +17,11 @@ h3 {
   font-family: inherit;
 }
 
-.intro-img,
-.intro-headings,
+.nav,
+.intro,
+.intro-img > img,
+.intro-headings-name,
+.intro-headings-title,
 .title,
 .smooth-headings,
 .smooth-text,
@@ -39,7 +42,7 @@ h3 {
 header {
   position: fixed;
   width: 100%;
-  z-index: 4;
+  z-index: 999;
 }
 header .nav {
   display: flex;
@@ -208,9 +211,10 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   left: calc((1vw + 1vh) * 3.5);
   bottom: 0;
-  font-size: calc((1vw + 1vh) * 2.2);
+  font-size: calc((1vw + 1vh) * 2);
   transform: rotate(-90deg);
   transform-origin: bottom left;
+  z-index: 4;
 }
 .intro-headings-title {
   width: calc((1vw + 1vh) * 29);
@@ -218,10 +222,11 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   right: calc((1vw + 1vh) * 3.5);
   bottom: 0;
-  font-size: calc((1vw + 1vh) * 2.2);
+  font-size: calc((1vw + 1vh) * 2);
   color: #000;
   transform: rotate(90deg);
   transform-origin: bottom right;
+  z-index: 4;
 }
 @media only screen and (min-width: 768px) {
   .intro-content {

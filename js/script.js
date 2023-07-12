@@ -277,35 +277,30 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 document.addEventListener("DOMContentLoaded", function () {
   gsap
     .timeline()
-    .from(".intro", { autoAlpha: 0, duration: 0.5 })
+    .from("header", { yPercent: -100 })
     .from("#img-first", {
       xPercent: -100,
       opacity: 0,
       ease: "expo",
-      duration: 0.6,
     })
     .from("#img-second", {
       xPercent: 100,
       opacity: 0,
       ease: "expo",
-      duration: 0.6,
     })
     .from("#img-third", {
       xPercent: 100,
       opacity: 0,
       ease: "expo",
-      duration: 0.6,
     })
     .from(".intro-headings-name", {
       yPercent: -100,
       opacity: 0,
       ease: "back",
-      duration: 0.6,
     })
     .from(".intro-headings-title", {
       yPercent: 100,
       opacity: 0,
       ease: "back",
-      duration: 0.6,
     });
 });
