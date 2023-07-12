@@ -1,2 +1,2 @@
-/vendor
-.htaccess
+/src/vendor
+/src/.htaccess

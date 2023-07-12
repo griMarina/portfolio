@@ -4,23 +4,25 @@ require "vendor/autoload.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER['HTTP_REFERER'] === 'http://localhost:8888/' && $_SERVER["REQUEST_METHOD"] === "POST") {
 
     $jsonData = file_get_contents("php://input");
-
     $data = json_decode($jsonData);
+
 
     $name = htmlspecialchars($data->name);
     $email = htmlspecialchars($data->email);
     $message = htmlspecialchars($data->message);
 
     if (empty($name) || empty($email) || empty($message)) {
+        header("Content-Type: application/json");
         echo json_encode(["message" => "Missing required information.", "status" => "ERROR"]);
         exit;
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(["message" => "Not valid email", "status" => "ERROR"]);
+        header("Content-Type: application/json");
+        echo json_encode(["message" => "Invalid email", "status" => "ERROR"]);
         exit;
     }
 
@@ -55,5 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $status = "ERROR";
     }
 
+    header('Content-Type: application/json');
     echo json_encode(["message" => $message, "status" => $status]);
+    exit;
+} else {
+    header('Content-Type: application/json');
+    echo json_encode(["message" => "Access denied.", "status" => "ERROR"]);
+    exit;
 }

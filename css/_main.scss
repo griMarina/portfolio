@@ -5,8 +5,8 @@
 }
 
 body {
-  background-image: url("../img/bg.jpg");
-  background-color: #c0e8df;
+  // background-image: url("../img/bg-dropdown.jpg");
+  background-color: #aea9a9;
   background-attachment: fixed;
   color: #ffffff;
   font-family: "Montaga", serif;
@@ -20,7 +20,6 @@ h3 {
   font-family: inherit;
 }
 
-#smooth-content,
 .intro-img,
 .intro-headings,
 .title,
@@ -29,12 +28,6 @@ h3 {
 .projects-gallery-item,
 .slider {
   will-change: transform;
-}
-
-#smooth-content {
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  overflow-x: hidden;
 }
 
 .container {

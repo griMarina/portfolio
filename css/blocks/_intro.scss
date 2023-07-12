@@ -1,44 +1,94 @@
-.intro {
-  position: relative;
-  height: calc($index * 30);
+// .intro {
+//   position: relative;
+//   height: calc($index * 30);
 
+//   &-img {
+//     width: calc($index * 28);
+//     position: absolute;
+//     left: 45vw;
+//     top: -45vh;
+//     z-index: -1;
+//     overflow-x: hidden;
+//   }
+
+//   &-headings {
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 43vh;
+//     letter-spacing: calc($index * 0.5);
+
+//     &-name {
+//       font-size: calc($index * 4);
+//       padding-bottom: calc((1vw + 1vh) * 2);
+//       line-height: 0.9;
+//       width: min-content;
+//     }
+
+//     &-title {
+//       font-size: calc($index * 2.5);
+//     }
+//   }
+
+//   @media (max-width: $tablet) {
+//     &-img {
+//       width: calc($index * 20);
+//       left: unset;
+//       right: 0;
+//       top: -50vh;
+//     }
+
+//     &-headings {
+//       margin-top: 50vh;
+//     }
+//   }
+// }
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // Pantone’s Color of the Year 2023, Viva Magenta 18-1750
+  background-color: #963048;
+
+  &-content {
+    position: relative;
+    height: 86vw;
+    width: 100%;
+  }
   &-img {
-    width: calc($index * 28);
-    position: absolute;
-    left: 45vw;
-    top: -45vh;
-    z-index: -1;
-    overflow-x: hidden;
+    img {
+      position: absolute;
+      width: 100%;
+
+      &:nth-child(2) {
+        z-index: 2;
+      }
+
+      &:last-child {
+        z-index: 3;
+      }
+    }
   }
 
   &-headings {
-    display: flex;
-    flex-direction: column;
-    margin-top: 43vh;
-    letter-spacing: calc($index * 0.5);
-
     &-name {
-      font-size: calc($index * 4);
-      padding-bottom: calc((1vw + 1vh) * 2);
-      line-height: 0.9;
-      width: min-content;
+      position: absolute;
+      left: 13vw;
+      bottom: 0;
+      font-size: 1.7rem;
+      transform: rotate(-90deg);
+      transform-origin: left;
     }
 
     &-title {
-      font-size: calc($index * 2.5);
-    }
-  }
-
-  @media (max-width: $tablet) {
-    &-img {
-      width: calc($index * 20);
-      left: unset;
-      right: 0;
-      top: -50vh;
-    }
-
-    &-headings {
-      margin-top: 50vh;
+      position: absolute;
+      right: 13vw;
+      bottom: 7vw;
+      font-size: 1.7rem;
+      color: #000;
+      transform: rotate(90deg);
+      transform-origin: right;
     }
   }
 }
