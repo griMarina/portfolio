@@ -188,7 +188,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
 }
 .intro-content {
   position: relative;
-  height: 100vw;
+  height: 86vw;
 }
 .intro-img img {
   position: absolute;
@@ -201,22 +201,22 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   z-index: 3;
 }
 .intro-headings-name {
-  width: 100vw;
+  width: 86vw;
   text-align: center;
   position: absolute;
-  left: 12vw;
+  left: 18vw;
   bottom: 0;
-  font-size: 1.7rem;
+  font-size: calc((1vw + 1vh) * 2.4);
   transform: rotate(-90deg);
   transform-origin: bottom left;
 }
 .intro-headings-title {
-  width: 100vw;
+  width: 86vw;
   text-align: center;
   position: absolute;
-  right: 12vw;
+  right: 18vw;
   bottom: 0;
-  font-size: 1.7rem;
+  font-size: calc((1vw + 1vh) * 2.4);
   color: #000;
   transform: rotate(90deg);
   transform-origin: bottom right;
