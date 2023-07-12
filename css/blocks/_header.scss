@@ -48,7 +48,7 @@ header {
           height: 4px;
           background-color: #ffffff;
           border-radius: 4px;
-          transition: 0.4s ease;
+          transition: transform 0.4s ease;
 
           &:first-of-type {
             top: 0;

@@ -84,7 +84,7 @@ header .nav .menu-icon span {
   height: 4px;
   background-color: #ffffff;
   border-radius: 4px;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 header .nav .menu-icon span:first-of-type {
   top: 0;
