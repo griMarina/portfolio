@@ -2,6 +2,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.onload = function () {
   let tl = gsap.timeline();
+  tl.to("#loader-container", { yPercent: -100, delay: 1.5 });
+
   tl.from(".nav", { yPercent: -100 });
   tl.to("#img-first", {
     rotate: "0deg",
@@ -32,9 +34,6 @@ window.onload = function () {
 
   ScrollTrigger.matchMedia({
     "(min-width: 992px)": function () {
-      let tl = gsap.timeline();
-
-      tl.delay(1.2);
       tl.from(".intro-headings-name", {
         xPercent: -100,
         autoAlpha: 0,
@@ -48,9 +47,6 @@ window.onload = function () {
     },
 
     "(max-width: 991px)": function () {
-      let tl = gsap.timeline();
-      tl.delay(1.2);
-
       tl.from(".intro-headings-name", {
         yPercent: -100,
         autoAlpha: 0,
