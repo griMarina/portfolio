@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #aea9a9;
+  background-color: grey;
   color: #ffffff;
   font-family: "Montaga", serif;
   overflow-x: hidden;
@@ -18,15 +18,11 @@ h3 {
 }
 
 .nav,
-.intro,
-.intro-img > img,
+#img-first,
+#img-second,
+#img-third,
 .intro-headings-name,
-.intro-headings-title,
-.title,
-.smooth-headings,
-.smooth-text,
-.projects-gallery-item,
-.slider {
+.intro-headings-title {
   will-change: transform;
 }
 

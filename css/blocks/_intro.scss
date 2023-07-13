@@ -1,33 +1,42 @@
 .intro {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   // Pantone’s Color of the Year 2023, Viva Magenta 18-1750
   background-color: #963048;
   padding: 0 7vw;
+  overflow-x: hidden;
 
   &-content {
     position: relative;
+    align-self: center;
     height: calc($index * 29);
     width: calc($index * 29);
-    align-self: center;
   }
 
   &-img {
     img {
+      display: flex;
       position: absolute;
       width: calc($index * 29);
+      visibility: hidden;
 
-      border-radius: 4px;
+      &:first-child {
+        transform: rotate(-35deg);
+        transform-origin: bottom left;
+      }
 
       &:nth-child(2) {
-        z-index: 2;
+        transform: rotate(35deg);
+        transform-origin: bottom right;
       }
 
       &:last-child {
-        z-index: 3;
+        transform: rotate(45deg);
+        transform-origin: right;
       }
+
+      border-radius: 4px;
     }
   }
 
@@ -58,7 +67,7 @@
     }
   }
 
-  @media only screen and (min-width: $tablet) {
+  @media (min-width: $tablet) {
     &-content {
       height: calc($index * 25);
       width: calc($index * 25);
@@ -84,7 +93,7 @@
     }
   }
 
-  @media only screen and (min-width: $laptop) {
+  @media (min-width: $laptop) {
     &-content {
       height: calc($index * 22);
       width: calc($index * 22);

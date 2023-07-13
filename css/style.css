@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #aea9a9;
+  background-color: grey;
   color: #ffffff;
   font-family: "Montaga", serif;
   overflow-x: hidden;
@@ -18,15 +18,11 @@ h3 {
 }
 
 .nav,
-.intro,
-.intro-img > img,
+#img-first,
+#img-second,
+#img-third,
 .intro-headings-name,
-.intro-headings-title,
-.title,
-.smooth-headings,
-.smooth-text,
-.projects-gallery-item,
-.slider {
+.intro-headings-title {
   will-change: transform;
 }
 
@@ -183,27 +179,35 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
 .intro {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background-color: #963048;
   padding: 0 7vw;
+  overflow-x: hidden;
 }
 .intro-content {
   position: relative;
+  align-self: center;
   height: calc((1vw + 1vh) * 29);
   width: calc((1vw + 1vh) * 29);
-  align-self: center;
 }
 .intro-img img {
+  display: flex;
   position: absolute;
   width: calc((1vw + 1vh) * 29);
+  visibility: hidden;
   border-radius: 4px;
 }
+.intro-img img:first-child {
+  transform: rotate(-35deg);
+  transform-origin: bottom left;
+}
 .intro-img img:nth-child(2) {
-  z-index: 2;
+  transform: rotate(35deg);
+  transform-origin: bottom right;
 }
 .intro-img img:last-child {
-  z-index: 3;
+  transform: rotate(45deg);
+  transform-origin: right;
 }
 .intro-headings-name {
   width: calc((1vw + 1vh) * 29);
@@ -228,7 +232,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   transform-origin: bottom right;
   z-index: 4;
 }
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .intro-content {
     height: calc((1vw + 1vh) * 25);
     width: calc((1vw + 1vh) * 25);
@@ -246,7 +250,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
     right: calc((1vw + 1vh) * 3.2);
   }
 }
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .intro-content {
     height: calc((1vw + 1vh) * 22);
     width: calc((1vw + 1vh) * 22);
