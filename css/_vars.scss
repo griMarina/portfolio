@@ -1,6 +1,6 @@
 $index: calc(1vw + 1vh);
 $gallery-gap: calc($index * 2);
-$light-color: #809f98;
+$text-color: #403845;
 $dark-color: #4b514f;
 $laptop: 992px;
 $tablet: 768px;
@@ -10,7 +10,6 @@ $mobile: 576px;
   position: absolute;
   font-weight: 500;
   font-size: calc($index * 6);
-  color: #ddeeeaed;
-  z-index: -1;
+  color: #d2868e4d;
   left: 0;
 }

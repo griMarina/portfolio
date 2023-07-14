@@ -2,8 +2,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.onload = function () {
   let tl = gsap.timeline();
+
+  // Slide up loader
   tl.to("#loader-container", { yPercent: -100, delay: 1.5 });
 
+  // Intro
   tl.from(".nav", { yPercent: -100 });
   tl.to("#img-first", {
     rotate: "0deg",
@@ -60,4 +63,17 @@ window.onload = function () {
       });
     },
   });
+
+  // About
+  const textAnimation = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".smooth-headings",
+      end: "top",
+      scrub: 1,
+      markers: true,
+    },
+  });
+
+  textAnimation.from(".title", { xPercent: -100, duration: 0.7 });
+  textAnimation.from(".smooth-text", { xPercent: 500, duration: 1 });
 };

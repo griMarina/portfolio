@@ -3,26 +3,23 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: calc($gallery-gap * 6);
+  padding-top: calc($gallery-gap * 3);
+  padding-bottom: calc($gallery-gap * 3);
 
   .title {
     @include slide-header;
-    top: -13vh;
+    top: 5vh;
   }
 
   &-list {
     list-style-type: none;
     columns: 3;
     font-size: 1.7rem;
-    color: #4b514f;
+    color: $text-color;
+    z-index: 2;
+
     li {
       line-height: 1.5;
-    }
-  }
-
-  @media (max-width: $laptop) {
-    .title {
-      top: -10vh;
     }
   }
 
@@ -33,10 +30,6 @@
   }
 
   @media (max-width: $mobile) {
-    .title {
-      top: -7vh;
-    }
-
     &-list {
       columns: 2;
     }

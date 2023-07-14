@@ -37,7 +37,7 @@
       font-family: inherit;
 
       &::placeholder {
-        color: $light-color;
+        color: $text-color;
         opacity: 1;
       }
     }
@@ -51,7 +51,7 @@
       font-size: 1.2rem;
       border: none;
       background-color: #f2f3f394;
-      color: $light-color;
+      color: $text-color;
       transition: 0.4s;
       font-family: inherit;
 
