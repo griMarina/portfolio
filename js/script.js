@@ -1,79 +1,96 @@
 gsap.registerPlugin(ScrollTrigger);
 
-window.onload = function () {
-  let tl = gsap.timeline();
-
-  // Slide up loader
-  tl.to("#loader-container", { yPercent: -100, delay: 1.5 });
-
-  // Intro
-  tl.from(".nav", { yPercent: -100 });
-  tl.to("#img-first", {
-    rotate: "0deg",
-    duration: 0.7,
-    autoAlpha: 1,
-    ease: "power4",
+function introAnimation() {
+  let tl = gsap.timeline({
+    defaults: {
+      opacity: 0,
+      duration: 0.7,
+      ease: "power4",
+    },
   });
-  tl.to(
+
+  tl.from(".intro", { autoAlpha: 0 });
+  tl.from(".nav", { y: -100 });
+  tl.from("#img-first", {
+    rotate: "-15deg",
+    x: -100,
+    y: 100,
+    transformOrigin: "bottom left",
+    duration: 1,
+  });
+  tl.from(
     "#img-second",
     {
-      rotate: "0deg",
-      duration: 0.7,
-      autoAlpha: 1,
-      ease: "power4",
+      rotate: "15deg",
+      x: 100,
+      y: 100,
+      duration: 1,
+      transformOrigin: "bottom right",
     },
     "<"
   );
-  tl.to(
+  tl.from(
     "#img-third",
     {
-      rotate: "0deg",
-      duration: 0.4,
-      autoAlpha: 1,
-      ease: "power4",
+      rotate: "25deg",
+      transformOrigin: "right",
     },
     "<0.3"
   );
 
   ScrollTrigger.matchMedia({
     "(min-width: 992px)": function () {
-      tl.from(".intro-headings-name", {
-        xPercent: -100,
-        autoAlpha: 0,
-        ease: "back",
-      });
-      tl.from(".intro-headings-title", {
-        xPercent: 100,
-        autoAlpha: 0,
-        ease: "back",
-      });
+      tl.from(
+        ".intro-headings-name",
+        {
+          x: -100,
+          ease: "back",
+        },
+        "-=0.3"
+      );
+      tl.from(
+        ".intro-headings-title",
+        {
+          x: 100,
+          ease: "back",
+        },
+        "<"
+      );
     },
 
     "(max-width: 991px)": function () {
-      tl.from(".intro-headings-name", {
-        yPercent: -100,
-        autoAlpha: 0,
-
-        ease: "back",
-      });
-      tl.from(".intro-headings-title", {
-        yPercent: 100,
-        autoAlpha: 0,
-        ease: "back",
-      });
+      tl.from(
+        ".intro-headings-name",
+        {
+          y: -100,
+          ease: "back",
+        },
+        "-=0.3"
+      );
+      tl.from(
+        ".intro-headings-title",
+        {
+          y: 100,
+          ease: "back",
+        },
+        "<"
+      );
     },
   });
+}
 
-  // About
-  const textAnimation = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".smooth-headings",
-      end: "top",
-      scrub: 1,
-      markers: true,
-    },
-  });
+// About
+// const textAnimation = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".smooth-headings",
+//     end: "top",
+//     scrub: 1,
+//     markers: true,
+//   },
+// });
+// textAnimation.from(".title", { xPercent: -100, duration: 0.7 });
+// textAnimation.from(".smooth-text", { xPercent: 500, duration: 1 });
 
-  textAnimation.from(".title", { xPercent: -100, duration: 0.7 });
-  textAnimation.from(".smooth-text", { xPercent: 500, duration: 1 });
+window.onload = function () {
+  introAnimation();
 };

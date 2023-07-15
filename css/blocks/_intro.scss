@@ -6,6 +6,8 @@
   background-color: #963048;
   padding: 0 7vw;
   overflow-x: hidden;
+  visibility: hidden;
+  will-change: transform;
 
   &-content {
     position: relative;
@@ -19,24 +21,8 @@
       display: flex;
       position: absolute;
       width: calc($index * 29);
-      visibility: hidden;
-
-      &:first-child {
-        transform: rotate(-35deg);
-        transform-origin: bottom left;
-      }
-
-      &:nth-child(2) {
-        transform: rotate(35deg);
-        transform-origin: bottom right;
-      }
-
-      &:last-child {
-        transform: rotate(45deg);
-        transform-origin: right;
-      }
-
       border-radius: 4px;
+      will-change: transform;
     }
   }
 
@@ -50,6 +36,8 @@
       font-size: calc($index * 2);
       transform: rotate(-90deg);
       transform-origin: bottom left;
+      will-change: transform;
+
       z-index: 4;
     }
 
@@ -63,6 +51,8 @@
       color: #000;
       transform: rotate(90deg);
       transform-origin: bottom right;
+      will-change: transform;
+
       z-index: 4;
     }
   }
