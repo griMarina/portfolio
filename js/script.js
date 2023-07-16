@@ -121,7 +121,7 @@ function sectionAnimation() {
     let content = section.querySelector(".content");
 
     let tl = gsap.timeline({ paused: true });
-    tl.from(title, { xPercent: -100, opacity: 0, duration: 0.7 });
+    tl.from(title, { xPercent: -100, opacity: 0, duration: 1 });
     tl.from(content, { yPercent: 100, opacity: 0, duration: 0.8 }, 0);
 
     ScrollTrigger.create({

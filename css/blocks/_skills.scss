@@ -8,13 +8,13 @@
 
   .title {
     @include slide-header;
-    top: 5vh;
+    top: calc($gallery-gap * 1.2);
   }
 
   &-list {
     list-style-type: none;
-    columns: 3;
-    font-size: 1.7rem;
+    columns: 2;
+    font-size: 1.5rem;
     color: $text-color;
     z-index: 2;
 
@@ -23,15 +23,19 @@
     }
   }
 
-  @media (max-width: $tablet) {
+  @media (min-width: $tablet) {
+    .title {
+      top: calc($gallery-gap * 0.9);
+    }
+
     &-list {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
   }
 
-  @media (max-width: $mobile) {
+  @media (min-width: $laptop) {
     &-list {
-      columns: 2;
+      columns: 3;
     }
   }
 }

@@ -114,10 +114,9 @@
           </h3>
         </div>
         <div class="projects-gallery">
-          <div class="projects-gallery-left">
-            <figure class="projects-gallery-item">
+          <figure>
+            <div class="project-image item">
               <img
-                class="project-image"
                 src="./img/projects/1.jpg"
                 alt="portfolio project screenshot"
               />
@@ -135,38 +134,8 @@
                   >VIEW GITHUB</a
                 >
               </div>
-            </figure>
-            <div class="project-desc projects-gallery-item">
-              <p class="project-desc-text">
-                This project was created as a pre-assignment for the Solita Dev
-                Academy. This web application displays information about bicycle
-                stations and journeys made with city bikes in the Helsinki
-                Capital area.
-              </p>
-              <ul class="project-desc-tools">
-                <li>Vue</li>
-                <li>PHP</li>
-                <li>MySQL</li>
-              </ul>
             </div>
-            <figure class="projects-gallery-item">
-              <img
-                class="project-image"
-                src="./img/projects/3.jpg"
-                alt="portfolio project screenshot"
-              />
-              <div class="overlay">
-                <a
-                  href="https://github.com/griMarina/Blog"
-                  target="_blank"
-                  class="overlay-text link"
-                  >VIEW GITHUB</a
-                >
-              </div>
-            </figure>
-          </div>
-          <div class="projects-gallery-right">
-            <div class="project-desc projects-gallery-item">
+            <figcaption class="project-desc item">
               <p class="project-desc-text">
                 This project was created during my internship at Taitotalo. It
                 is designed to provide a user-friendly interface and easy
@@ -182,10 +151,41 @@
                 <li>JavaScript</li>
                 <li>MySQL</li>
               </ul>
-            </div>
-            <figure class="projects-gallery-item">
+            </figcaption>
+          </figure>
+
+          <figure>
+            <div class="project-image item">
               <img
-                class="project-image"
+                src="./img/projects/3.jpg"
+                alt="portfolio project screenshot"
+              />
+              <div class="overlay">
+                <a
+                  href="https://github.com/griMarina/Blog"
+                  target="_blank"
+                  class="overlay-text link"
+                  >VIEW GITHUB</a
+                >
+              </div>
+            </div>
+            <figcaption class="project-desc item">
+              <p class="project-desc-text">
+                This backend project is an API for a Blog platform that allows
+                users to sign in, create and like posts. The authentication
+                process is handled using tokens, ensuring secure access to the
+                platform.
+              </p>
+              <ul class="project-desc-tools">
+                <li>PHP</li>
+                <li>SQLite</li>
+              </ul>
+            </figcaption>
+          </figure>
+
+          <figure class="projects-gallery-item">
+            <div class="project-image item">
+              <img
                 src="./img/projects/2.jpg"
                 alt="portfolio project screenshot"
               />
@@ -203,21 +203,21 @@
                   >VIEW GITHUB</a
                 >
               </div>
-            </figure>
-            <div class="project-desc projects-gallery-item">
+            </div>
+            <figcaption class="project-desc item">
               <p class="project-desc-text">
-                This backend project is an API for a Blog platform that allows
-                users to sign in, create and like posts. The authentication
-                process is handled using tokens, ensuring secure access to the
-                platform.
+                This project was created as a pre-assignment for the Solita Dev
+                Academy. This web application displays information about bicycle
+                stations and journeys made with city bikes in the Helsinki
+                Capital area.
               </p>
               <ul class="project-desc-tools">
+                <li>Vue</li>
                 <li>PHP</li>
-                <li>SQLite</li>
-                <li></li>
+                <li>MySQL</li>
               </ul>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
       <!-- <section class="section interests container">

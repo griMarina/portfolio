@@ -20,6 +20,11 @@ h3 {
   padding: 0 7vw;
 }
 
+.title,
+.content {
+  will-change: transform;
+}
+
 .link {
   text-decoration: none;
   color: inherit;

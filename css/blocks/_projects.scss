@@ -4,155 +4,117 @@
   flex-direction: column;
   position: relative;
   padding-top: calc($gallery-gap * 3);
-  padding-bottom: calc($gallery-gap * 4);
+  padding-bottom: calc($gallery-gap * 3);
 
   .title {
     @include slide-header;
-    top: 5vh;
+    top: calc($gallery-gap * 1.2);
   }
 
   &-heading {
     position: relative;
     text-align: center;
     color: $text-color;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     font-weight: 300;
     z-index: 2;
   }
 
   &-gallery {
     display: flex;
-
-    &-left > * {
-      margin-top: calc($gallery-gap * 4);
-    }
-
-    &-left {
-      .project-desc {
-        text-align: left;
-
-        li {
-          margin-right: 20px;
-        }
-      }
-    }
-
-    &-right {
-      .project-desc {
-        margin-top: calc($gallery-gap * 8);
-        align-items: flex-end;
-        text-align: right;
-
-        li {
-          margin-left: 20px;
-        }
-      }
-
-      figure {
-        margin-top: calc($gallery-gap * 4);
-      }
-    }
+    flex-direction: column;
+    margin-top: calc($gallery-gap * 4);
 
     figure {
-      display: flex;
-      max-width: calc($index * 21);
-      max-height: 180vh;
-      margin-bottom: $gallery-gap;
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-
-      transition: 0.5s;
+      margin-bottom: calc($gallery-gap * 4);
 
       .project-image {
-        transition: 0.5s;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        background-color: #131615a3;
-        color: #fafafa;
-        letter-spacing: 3px;
         display: flex;
+        max-width: calc($index * 31);
+        margin-bottom: $gallery-gap;
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+
+        transition: 0.5s ease;
+
+        img {
+          transition: 0.5s ease;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          // background-color: #161314a3;
+          background-color: #180308c4;
+          color: #fafafa;
+          letter-spacing: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          opacity: 0;
+          transition: 0.5s;
+
+          a {
+            font-size: 0.8rem;
+          }
+        }
+
+        &:hover {
+          transform: scale(0.9);
+        }
+
+        &:hover img {
+          transform: scale(1.3);
+        }
+
+        &:hover .overlay {
+          opacity: 1;
+        }
+      }
+
+      .project-desc {
+        line-height: 1.2;
+        font-size: 1.2rem;
+        color: $text-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        justify-content: space-evenly;
+        text-align: center;
+        margin-top: calc($gallery-gap * 1.5);
 
-        opacity: 0;
-        transition: 0.5s;
+        &-tools {
+          display: flex;
+          width: 100%;
+          justify-content: space-evenly;
+          list-style: none;
+          color: $text-color;
+          margin-top: 20px;
+        }
+
+        &-text i {
+          display: block;
+          margin-top: 3px;
+        }
       }
-
-      &:hover {
-        transform: scale(0.9);
-      }
-
-      &:hover img {
-        transform: scale(1.3);
-      }
-
-      &:hover .overlay {
-        opacity: 1;
-      }
     }
   }
 
-  &-gallery > * {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .project-desc {
-    line-height: 1.2;
-    font-size: 1.5rem;
-    color: $dark-color;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    &-tools {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      color: $text-color;
-      margin-top: 20px;
-    }
-
-    &-text i {
-      display: block;
-      margin-top: 3px;
-    }
-  }
-
-  .project-desc-mobile {
-    display: none;
-  }
-
-  @media (max-width: $laptop) {
-    a {
-      font-size: 0.8rem;
-    }
-
-    .project-desc {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: $tablet) {
+  @media (min-width: $tablet) {
     &-heading {
-      font-size: 1.7rem;
+      font-size: 2.2rem;
     }
 
     .projects-gallery {
-      flex-direction: column;
+      flex-direction: row;
     }
 
     &-right > * {
@@ -164,7 +126,21 @@
     }
 
     figure {
-      max-width: calc($index * 31);
+      max-width: calc($index * 21);
+    }
+  }
+
+  @media (min-width: $laptop) {
+    .title {
+      top: calc($gallery-gap * 0.9);
+    }
+
+    a {
+      font-size: 1rem;
+    }
+
+    .project-desc {
+      font-size: 1.5rem;
     }
   }
 }
