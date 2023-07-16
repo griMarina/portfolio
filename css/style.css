@@ -275,7 +275,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
-  color: rgba(210, 134, 142, 0.3019607843);
+  color: rgba(210, 134, 142, 0.168627451);
   left: 0;
   top: 5vh;
 }
@@ -313,7 +313,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
-  color: rgba(210, 134, 142, 0.3019607843);
+  color: rgba(210, 134, 142, 0.168627451);
   left: 0;
   top: 5vh;
 }
@@ -353,7 +353,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
-  color: rgba(210, 134, 142, 0.3019607843);
+  color: rgba(210, 134, 142, 0.168627451);
   left: 0;
   top: 5vh;
 }
@@ -496,7 +496,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
-  color: rgba(210, 134, 142, 0.3019607843);
+  color: rgba(210, 134, 142, 0.168627451);
   left: 0;
   left: -7vw;
   top: -13vh;
@@ -595,7 +595,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   position: absolute;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 6);
-  color: rgba(210, 134, 142, 0.3019607843);
+  color: rgba(210, 134, 142, 0.168627451);
   left: 0;
   left: -7vw;
   top: -13vh;
