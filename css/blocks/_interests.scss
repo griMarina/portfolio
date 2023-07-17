@@ -3,19 +3,20 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: calc($gallery-gap * 6);
+  padding-top: calc($gallery-gap * 3);
+  padding-bottom: calc($gallery-gap * 3);
+  overflow-x: hidden;
 
   .title {
     @include slide-header;
-    left: -7vw;
-    top: -13vh;
+    top: calc($gallery-gap * 1.2);
   }
 
   &-text {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     line-height: 1.5;
-    color: #4b514f;
+    color: $text-color;
     margin-bottom: calc($gallery-gap * 4);
   }
 
@@ -56,8 +57,8 @@
       display: flex;
 
       img {
-        width: 27vw;
-        border-radius: 8px;
+        width: 85vw;
+        border-radius: 4px;
       }
 
       figcaption {
@@ -66,7 +67,7 @@
         color: $dark-color;
         bottom: 1vw;
         background-color: #f2f3f3b1;
-        border-radius: 8px;
+        border-radius: 4px;
         padding: 12px;
         left: 2vw;
 
@@ -82,13 +83,12 @@
       }
     }
   }
-  @media (max-width: $laptop) {
-    .title {
-      top: -10vh;
-    }
-  }
 
-  @media (max-width: $tablet) {
+  @media (min-width: $tablet) {
+    .title {
+      top: calc($gallery-gap * 0.9);
+    }
+
     &-text {
       font-size: 1.5rem;
     }
@@ -96,19 +96,15 @@
     .slider {
       &-img {
         img {
-          width: 85vw;
+          width: 27vw;
         }
       }
     }
   }
 
-  @media (max-width: $mobile) {
-    .title {
-      top: -7vh;
-    }
-
+  @media (min-width: $laptop) {
     &-text {
-      font-size: 1.3rem;
+      font-size: 1.7rem;
     }
   }
 }

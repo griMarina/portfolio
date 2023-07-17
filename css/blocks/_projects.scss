@@ -27,11 +27,13 @@
 
     figure {
       margin-bottom: calc($gallery-gap * 4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       .project-image {
         display: flex;
         max-width: calc($index * 31);
-        margin-bottom: $gallery-gap;
         border-radius: 4px;
         position: relative;
         overflow: hidden;
@@ -51,8 +53,7 @@
           left: 0;
           right: 0;
           height: 100%;
-          // background-color: #161314a3;
-          background-color: #180308c4;
+          background-color: #161314a3;
           color: #fafafa;
           letter-spacing: 3px;
           display: flex;
@@ -84,17 +85,14 @@
         line-height: 1.2;
         font-size: 1.2rem;
         color: $text-color;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-align: center;
         margin-top: calc($gallery-gap * 1.5);
 
         &-tools {
           display: flex;
-          width: 100%;
           justify-content: space-evenly;
+          flex-wrap: wrap;
+          width: 100%;
           list-style: none;
           color: $text-color;
           margin-top: 20px;
@@ -113,20 +111,33 @@
       font-size: 2.2rem;
     }
 
-    .projects-gallery {
-      flex-direction: row;
-    }
+    &-gallery {
+      figure {
+        flex-direction: row;
+        margin-bottom: calc($gallery-gap * 3);
 
-    &-right > * {
-      margin-top: calc($gallery-gap * 4);
-    }
+        .project-image {
+          min-width: calc($index * 16);
+        }
 
-    .project-desc {
-      display: none;
-    }
+        .project-desc {
+          margin-top: 0;
+          padding-left: 5vw;
 
-    figure {
-      max-width: calc($index * 21);
+          &-tools {
+            margin-top: 40px;
+          }
+        }
+
+        &:nth-of-type(even) {
+          flex-direction: row-reverse;
+
+          .project-desc {
+            padding-left: 0;
+            padding-right: 5vw;
+          }
+        }
+      }
     }
   }
 
@@ -135,12 +146,29 @@
       top: calc($gallery-gap * 0.9);
     }
 
-    a {
-      font-size: 1rem;
-    }
+    &-gallery {
+      figure {
+        margin-bottom: calc($gallery-gap * 3);
 
-    .project-desc {
-      font-size: 1.5rem;
+        .project-image {
+          min-width: calc($index * 21);
+
+          a {
+            font-size: 1rem;
+          }
+        }
+
+        .project-desc {
+          font-size: 1.5rem;
+          padding-left: 10vw;
+        }
+
+        &:nth-of-type(even) {
+          .project-desc {
+            padding-right: 10vw;
+          }
+        }
+      }
     }
   }
 }
