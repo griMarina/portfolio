@@ -114,11 +114,10 @@ header .nav .nav-links {
   visibility: hidden;
   position: fixed;
   top: 0;
-  background-image: url("../img/bg-dropdown.jpg");
-  background-color: #fafafa;
+  background-color: #efc2c0;
   height: 100vh;
   width: 100vw;
-  color: #4b514f;
+  color: #403845;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,12 +142,12 @@ header .nav .nav-links li a::after {
   position: absolute;
   right: -33px;
   top: 12px;
-  box-shadow: inset 0 0 0 1px #4b514f;
+  box-shadow: inset 0 0 0 1px #403845;
   transition: 0.4s ease-in;
 }
 header .nav .nav-links li:hover a::after {
   visibility: visible;
-  box-shadow: inset 0 0 0 6px #4b514f;
+  box-shadow: inset 0 0 0 6px #403845;
 }
 header .nav-link {
   font-size: 2rem;
@@ -562,7 +561,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
 .interests .slider-img figcaption {
   opacity: 0;
   position: absolute;
-  color: #4b514f;
+  color: #403845;
   bottom: 1vw;
   background-color: rgba(242, 243, 243, 0.6941176471);
   border-radius: 4px;
@@ -696,13 +695,11 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: #c0e8df;
-  background-image: url("../img/bg-dropdown.jpg");
+  background-color: #963048;
   justify-content: space-evenly;
   text-align: center;
   height: 100px;
-  color: #403845;
-  border-top: 1px solid rgba(242, 243, 243, 0.5803921569);
+  color: #ffffff;
 }
 .footer-links {
   display: flex;
@@ -712,10 +709,10 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   vertical-align: bottom;
 }
 .footer-links .footer-logo:hover {
-  color: #4b514f;
+  color: #edcdc2;
 }
 .footer-links a:hover svg path {
-  fill: #4b514f;
+  fill: #edcdc2;
 }
 .footer-logo {
   font-size: 1.5rem;

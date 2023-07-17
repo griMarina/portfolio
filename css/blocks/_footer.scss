@@ -1,13 +1,11 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: #c0e8df;
-  background-image: url("../img/bg-dropdown.jpg");
+  background-color: $magenta-color;
   justify-content: space-evenly;
   text-align: center;
   height: 100px;
-  color: $text-color;
-  border-top: 1px solid #f2f3f394;
+  color: #ffffff;
 
   &-links {
     display: flex;
@@ -18,12 +16,12 @@
     }
 
     .footer-logo:hover {
-      color: $dark-color;
+      color: #edcdc2;
     }
 
     a:hover {
       svg path {
-        fill: $dark-color;
+        fill: #edcdc2;
       }
     }
   }
