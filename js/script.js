@@ -138,7 +138,13 @@ function sectionAnimation() {
   });
 }
 
+function projectsAnimation() {
+  const sections = document.querySelectorAll("figure");
+  console.log(sections);
+}
+
 window.onload = function () {
   introAnimation();
   sectionAnimation();
+  projectsAnimation();
 };

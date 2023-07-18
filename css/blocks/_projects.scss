@@ -52,7 +52,7 @@
           left: 0;
           right: 0;
           height: 100%;
-          background-color: #161314a3;
+          background-color: #0e0328a3;
           color: #fafafa;
           letter-spacing: 3px;
           display: flex;
@@ -148,8 +148,10 @@
         .project-image {
           min-width: calc($index * 21);
 
-          a {
-            font-size: 1rem;
+          .overlay {
+            a {
+              font-size: 1rem;
+            }
           }
         }
 
