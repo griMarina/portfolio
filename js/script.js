@@ -139,8 +139,60 @@ function sectionAnimation() {
 }
 
 function projectsAnimation() {
-  const sections = document.querySelectorAll("figure");
-  console.log(sections);
+  const projects = document.querySelectorAll(".projects-gallery figure");
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 768px)": function () {
+      projects.forEach((element, index) => {
+        let items = element.querySelectorAll(".item");
+        let distance = index % 2 === 0 ? 100 : -100;
+        let tl = gsap.timeline({ paused: true });
+
+        tl.from(items, {
+          duration: 0.5,
+          xPercent: gsap.utils.wrap([-distance, distance]),
+        });
+        tl.from(items, { opacity: 0, duration: 0.3 }, 0);
+
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top 80%",
+          onEnter: () => tl.play(),
+        });
+
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top 100%",
+          onLeaveBack: () => tl.pause(0),
+        });
+      });
+    },
+
+    "(max-width: 767px)": function () {
+      gsap.utils.toArray(".item").forEach((element, index) => {
+        let target = element.querySelector("div");
+
+        let tl = gsap.timeline({ paused: true });
+        if (target.classList.contains("img")) {
+          tl.from(target, { duration: 0.5, opacity: 0, scale: 0.8 });
+        } else {
+          tl.from(target, { duration: 0.5, opacity: 0, y: 100 });
+        }
+
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top 90%",
+          onEnter: () => tl.play(),
+        });
+
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top 100%",
+          onLeaveBack: () => tl.pause(0),
+        });
+      });
+    },
+  });
 }
 
 window.onload = function () {
