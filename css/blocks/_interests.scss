@@ -9,7 +9,7 @@
 
   .title {
     @include slide-header;
-    top: calc($gallery-gap * 1.2);
+    top: calc($gallery-gap * 0.4);
   }
 
   &-text {
@@ -32,7 +32,7 @@
         top: 45%;
         background: none;
         border: none;
-        z-index: 2;
+        z-index: 1;
         cursor: pointer;
       }
 
@@ -64,9 +64,9 @@
       figcaption {
         opacity: 0;
         position: absolute;
-        color: $text-color;
+        color: $dark-color;
         bottom: 1vw;
-        background-color: #f2f3f3b1;
+        background-color: #f7f1e181;
         border-radius: 4px;
         padding: 12px;
         left: 2vw;
@@ -85,10 +85,6 @@
   }
 
   @media (min-width: $tablet) {
-    .title {
-      top: calc($gallery-gap * 0.9);
-    }
-
     &-text {
       font-size: 1.5rem;
     }

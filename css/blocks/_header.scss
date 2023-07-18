@@ -1,7 +1,7 @@
 header {
   position: fixed;
   width: 100%;
-  z-index: 6;
+  z-index: 1;
 
   .nav {
     display: flex;
@@ -23,7 +23,7 @@ header {
     .menu {
       margin-right: 7vw;
       border-radius: 4px;
-      background-color: #f2f3f394;
+      background-color: #ead0d581;
       z-index: 5;
 
       &-icon {
@@ -49,7 +49,7 @@ header {
           height: 4px;
           background-color: #ffffff;
           border-radius: 4px;
-          transition: transform 0.4s ease;
+          transition: all 0.4s ease;
 
           &:first-of-type {
             top: 0;
@@ -99,15 +99,16 @@ header {
       visibility: hidden;
       position: fixed;
       top: 0;
-      background-color: #efc2c0;
+      background-color: $white;
       height: 100vh;
       width: 100vw;
-      color: $text-color;
+      color: $magenta-color;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       list-style: none;
+      z-index: 4;
 
       transition: 0.5s;
       transform: translateY(-100%);
@@ -129,14 +130,14 @@ header {
           position: absolute;
           right: -33px;
           top: 12px;
-          box-shadow: inset 0 0 0 1px $text-color;
+          box-shadow: inset 0 0 0 1px $magenta-color;
 
           transition: 0.4s ease-in;
         }
 
         &:hover a::after {
           visibility: visible;
-          box-shadow: inset 0 0 0 6px $text-color;
+          box-shadow: inset 0 0 0 6px $magenta-color;
         }
       }
     }

@@ -8,6 +8,12 @@ body {
   color: #ffffff;
   font-family: "Montaga", serif;
   overflow-x: hidden;
+  background: rgb(150, 48, 72);
+  background: linear-gradient(
+    180deg,
+    rgba(150, 48, 72, 1) 0%,
+    rgba(191, 202, 214, 1) 96%
+  );
 }
 
 h1,

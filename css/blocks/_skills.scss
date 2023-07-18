@@ -8,7 +8,7 @@
 
   .title {
     @include slide-header;
-    top: calc($gallery-gap * 1.2);
+    top: calc($gallery-gap * 0.4);
   }
 
   &-list {
@@ -16,7 +16,6 @@
     columns: 2;
     font-size: 1.5rem;
     color: $text-color;
-    z-index: 2;
 
     li {
       line-height: 1.5;
@@ -24,10 +23,6 @@
   }
 
   @media (min-width: $tablet) {
-    .title {
-      top: calc($gallery-gap * 0.9);
-    }
-
     &-list {
       font-size: 1.7rem;
     }

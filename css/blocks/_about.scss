@@ -3,20 +3,18 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: calc($gallery-gap * 6);
+  padding-top: calc($gallery-gap * 3);
   padding-bottom: calc($gallery-gap * 3);
-  // background-color: #edcdc2;
 
   .title {
     @include slide-header;
-    top: calc($gallery-gap * 4);
+    top: calc($gallery-gap * 0.4);
   }
 
   &-text {
     color: $text-color;
     font-size: 1.3rem;
     line-height: 1.4;
-    z-index: 2;
   }
   span {
     display: block;
@@ -24,20 +22,12 @@
   }
 
   @media (min-width: $tablet) {
-    .title {
-      top: calc($gallery-gap * 3.7);
-    }
-
     &-text {
       font-size: 1.5rem;
     }
   }
 
   @media (min-width: $laptop) {
-    .title {
-      top: calc($gallery-gap * 3.9);
-    }
-
     &-text {
       font-size: 1.7rem;
     }

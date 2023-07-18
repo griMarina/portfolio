@@ -16,12 +16,12 @@
     }
 
     .footer-logo:hover {
-      color: #edcdc2;
+      color: $blue;
     }
 
     a:hover {
       svg path {
-        fill: #edcdc2;
+        fill: $blue;
       }
     }
   }

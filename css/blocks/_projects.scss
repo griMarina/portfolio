@@ -8,7 +8,7 @@
 
   .title {
     @include slide-header;
-    top: calc($gallery-gap * 1.2);
+    top: calc($gallery-gap * 0.4);
   }
 
   &-heading {
@@ -17,7 +17,6 @@
     color: $text-color;
     font-size: 1.7rem;
     font-weight: 300;
-    z-index: 2;
   }
 
   &-gallery {
@@ -142,10 +141,6 @@
   }
 
   @media (min-width: $laptop) {
-    .title {
-      top: calc($gallery-gap * 0.9);
-    }
-
     &-gallery {
       figure {
         margin-bottom: calc($gallery-gap * 3);

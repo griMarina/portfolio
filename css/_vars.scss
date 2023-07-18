@@ -1,7 +1,13 @@
 $index: calc(1vw + 1vh);
 $gallery-gap: calc($index * 2);
+// Pantone’s Color of the Year 2023, Viva Magenta 18-1750
 $magenta-color: #963048;
-$text-color: #403845;
+$white: #f7f1e1;
+$blue: #bfcad6;
+$pink: #ead0d5;
+$dark-color: #403845;
+$text-color: #fafafa;
+
 $laptop: 992px;
 $tablet: 768px;
 $mobile: 576px;
@@ -10,6 +16,6 @@ $mobile: 576px;
   position: absolute;
   font-weight: 500;
   font-size: calc($index * 6);
-  color: #d2868e2b;
+  color: #f7f1e134;
   left: 0;
 }
