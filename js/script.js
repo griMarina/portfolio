@@ -180,7 +180,7 @@ function projectsAnimation() {
   });
 }
 
-function sliderAnimation() {
+function sliderFunc() {
   const previous = document.querySelector(".slider-btn-previous");
   const next = document.querySelector(".slider-btn-next");
   const images = document.querySelectorAll(".slider-img");
@@ -253,9 +253,60 @@ function sliderAnimation() {
   slider.addEventListener("touchend", handleTouchEnd);
 }
 
+function sliderAnimaiton() {
+  ScrollTrigger.matchMedia({
+    "(max-width: 767px)": function () {
+      const tl = gsap.timeline();
+      tl.from(".slider-images figure", {
+        yPercent: 100,
+        stagger: 0.1,
+        opacity: 0,
+        duration: 0.7,
+      });
+      tl.from(".slider-buttons", { autoAlpha: 0 }, "<0.3");
+
+      ScrollTrigger.create({
+        trigger: ".slider",
+        start: "top 50%",
+        onEnter: () => tl.play(),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".slider",
+        start: "top 100%",
+        onLeaveBack: () => tl.pause(0),
+      });
+    },
+    "(min-width: 768px)": function () {
+      const tl = gsap.timeline();
+
+      tl.from(".slider-images figure", {
+        x: 100,
+        stagger: 0.1,
+        opacity: 0,
+        duration: 0.7,
+      });
+      tl.from(".slider-buttons", { autoAlpha: 0 }, "<0.6");
+
+      ScrollTrigger.create({
+        trigger: ".slider",
+        start: "top 50%",
+        onEnter: () => tl.play(),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".slider",
+        start: "top 100%",
+        onLeaveBack: () => tl.pause(0),
+      });
+    },
+  });
+}
+
 window.onload = function () {
   introAnimation();
   sectionAnimation();
   projectsAnimation();
-  sliderAnimation();
+  sliderAnimaiton();
+  sliderFunc();
 };
