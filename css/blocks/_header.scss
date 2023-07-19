@@ -8,6 +8,7 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 90px;
+    visibility: hidden;
     will-change: transform;
 
     &-logo {
