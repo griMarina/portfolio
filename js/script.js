@@ -189,23 +189,28 @@ function sliderAnimation() {
   const imageWidth = images[0].clientWidth;
   let currentPosition = 0;
   let touchStartX = 0;
+  const isMobile = window.screen.width < 768;
 
   function swapImages(direction) {
-    const lastImgPosition = -(imageWidth * (totalImages - 1));
+    const lastImgPosition = isMobile
+      ? -(imageWidth * (totalImages - 2))
+      : -(imageWidth * (totalImages - 4));
+
+    gsap.defaults({ duration: 0.1 });
 
     if (direction === "next") {
-      gsap.to(previous, { autoAlpha: 1 });
+      currentPosition -= imageWidth;
 
-      if (currentPosition > lastImgPosition) {
-        currentPosition -= imageWidth;
+      if (currentPosition >= lastImgPosition) {
+        gsap.to(previous, { autoAlpha: 1 });
       } else {
         gsap.to(next, { autoAlpha: 0 });
       }
     } else if (direction === "previous") {
-      gsap.to(next, { autoAlpha: 1 });
+      currentPosition += imageWidth;
 
       if (currentPosition < 0) {
-        currentPosition += imageWidth;
+        gsap.to(next, { autoAlpha: 1 });
       } else {
         gsap.to(previous, { autoAlpha: 0 });
       }

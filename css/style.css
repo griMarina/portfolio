@@ -532,6 +532,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
 }
 .interests .slider-buttons .slider-btn-previous {
   left: 1vw;
+  visibility: hidden;
 }
 .interests .slider-buttons .slider-btn-next {
   right: 0;
