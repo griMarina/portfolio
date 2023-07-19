@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function introAnimation() {
   ScrollTrigger.matchMedia({
@@ -114,6 +114,37 @@ function introAnimation() {
   });
 }
 
+function navAnimation() {
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const toggle = document.getElementById("toggle");
+      toggle.checked = false;
+
+      const target = this.getAttribute("href");
+
+      gsap.to(window, {
+        duration: 0.5,
+        scrollTo: { y: target, offsetY: 80 },
+      });
+    });
+
+    const logoLinks = document.querySelectorAll(".logo");
+    logoLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        gsap.to(window, {
+          duration: 0.5,
+          scrollTo: { y: 0 },
+        });
+      });
+    });
+  });
+}
+
 function sectionAnimation() {
   const sections = document.querySelectorAll(".section");
   sections.forEach((section) => {
@@ -189,6 +220,7 @@ function sliderFunc() {
   const imageWidth = images[0].clientWidth;
   let currentPosition = 0;
   let touchStartX = 0;
+  let currentImage = 0;
   const isMobile = window.screen.width < 768;
 
   function swapImages(direction) {
@@ -200,6 +232,7 @@ function sliderFunc() {
 
     if (direction === "next") {
       currentPosition -= imageWidth;
+      currentImage++;
 
       if (currentPosition >= lastImgPosition) {
         gsap.to(previous, { autoAlpha: 1 });
@@ -208,6 +241,7 @@ function sliderFunc() {
       }
     } else if (direction === "previous") {
       currentPosition += imageWidth;
+      currentImage--;
 
       if (currentPosition < 0) {
         gsap.to(next, { autoAlpha: 1 });
@@ -232,9 +266,13 @@ function sliderFunc() {
     const touchDiff = touchStartX - touchCurrentX;
 
     if (touchDiff > 0) {
-      swapImages("next");
+      if (currentImage < totalImages - 1) {
+        swapImages("next");
+      }
     } else if (touchDiff < 0) {
-      swapImages("previous");
+      if (currentImage > 0) {
+        swapImages("previous");
+      }
     }
 
     touchStartX = 0;
@@ -256,18 +294,19 @@ function sliderFunc() {
 function sliderAnimaiton() {
   ScrollTrigger.matchMedia({
     "(max-width: 767px)": function () {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({ paused: true });
+
       tl.from(".slider-images figure", {
         yPercent: 100,
         stagger: 0.1,
         opacity: 0,
         duration: 0.7,
       });
-      tl.from(".slider-buttons", { autoAlpha: 0 }, "<0.3");
+      tl.from(".slider-buttons", { autoAlpha: 0 });
 
       ScrollTrigger.create({
         trigger: ".slider",
-        start: "top 50%",
+        start: "top 60%",
         onEnter: () => tl.play(),
       });
 
@@ -278,7 +317,7 @@ function sliderAnimaiton() {
       });
     },
     "(min-width: 768px)": function () {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({ paused: true });
 
       tl.from(".slider-images figure", {
         x: 100,
@@ -290,7 +329,7 @@ function sliderAnimaiton() {
 
       ScrollTrigger.create({
         trigger: ".slider",
-        start: "top 50%",
+        start: "top 60%",
         onEnter: () => tl.play(),
       });
 
@@ -303,10 +342,111 @@ function sliderAnimaiton() {
   });
 }
 
+function formFunc() {
+  const form = document.querySelector(".contact-form");
+
+  const formIn = gsap.timeline({ paused: true });
+  formIn.from(".contact-form .form-item", {
+    y: 100,
+    stagger: 0.2,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power2",
+  });
+
+  ScrollTrigger.create({
+    trigger: ".contact-form",
+    start: "top 60%",
+    onEnter: () => formIn.play(),
+  });
+
+  ScrollTrigger.create({
+    trigger: ".contact-form",
+    start: "top 100%",
+    onLeaveBack: () => formIn.pause(0),
+  });
+
+  const formOut = gsap.timeline({ paused: true });
+  formOut.to(".contact-form .form-item", {
+    y: -100,
+    stagger: 0.1,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power2",
+  });
+
+  function showMessage(message) {
+    const contact = document.querySelector(".contact");
+    const html = `<div class="contact-message container">
+      <span>${message}</span>
+    </div>`;
+    contact.insertAdjacentHTML("beforeend", html);
+
+    const contactMessage = document.querySelector(".contact-message");
+
+    contactMessage.offsetHeight;
+
+    const tl = gsap.timeline({ ease: "power1", delay: 1.5 });
+    tl.from(contactMessage, {
+      yPercent: -100,
+      autoAlpha: 0,
+    });
+    tl.to(
+      contactMessage,
+      {
+        autoAlpha: 0,
+        yPercent: 100,
+        onComplete: () => {
+          contactMessage.remove();
+
+          form.reset();
+          formOut.reverse();
+        },
+      },
+      "<2"
+    );
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(this);
+
+    const name = data.get("name").trim();
+    const email = data.get("email").trim();
+    const message = data.get("message").trim();
+
+    fetch("./src/mail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        formOut.play();
+        showMessage(data.message);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  form.addEventListener("submit", handleFormSubmit);
+}
+
 window.onload = function () {
   introAnimation();
+  navAnimation();
   sectionAnimation();
   projectsAnimation();
   sliderAnimaiton();
   sliderFunc();
+  formFunc();
 };

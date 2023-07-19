@@ -56,13 +56,10 @@
       color: $dark-color;
       font-family: inherit;
 
-      transition: 0.4s ease-in-out;
-
       &:hover {
         cursor: pointer;
         background: $blue;
-
-        color: #ffffff;
+        color: #141313;
       }
     }
   }
@@ -71,12 +68,9 @@
     position: absolute;
     top: 50%;
     font-size: 1.5rem;
-
     line-height: 2;
-    color: #4b514f;
+    color: $white;
     text-align: center;
-    opacity: 0;
-    transform: translateY(400px);
   }
 
   @media (min-width: $tablet) {

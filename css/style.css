@@ -640,22 +640,19 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
   background-color: #ffffff;
   color: #403845;
   font-family: inherit;
-  transition: 0.4s ease-in-out;
 }
 .contact-form-btn:hover {
   cursor: pointer;
   background: #6c92cc;
-  color: #ffffff;
+  color: #141313;
 }
 .contact-message {
   position: absolute;
   top: 50%;
   font-size: 1.5rem;
   line-height: 2;
-  color: #4b514f;
+  color: #f7f1e1;
   text-align: center;
-  opacity: 0;
-  transform: translateY(400px);
 }
 @media (min-width: 768px) {
   .contact-form {

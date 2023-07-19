@@ -164,38 +164,6 @@
             <div class="project-image item">
               <div class="img">
                 <img
-                  src="./img/projects/3.jpg"
-                  alt="Image for the Blog API project"
-                />
-                <div class="overlay">
-                  <a
-                    href="https://github.com/griMarina/Blog"
-                    target="_blank"
-                    class="overlay-text link"
-                    >VIEW GITHUB</a
-                  >
-                </div>
-              </div>
-            </div>
-            <figcaption class="project-desc item">
-              <div>
-                <p class="project-desc-text">
-                  This backend project is an API for a Blog platform that allows
-                  users to sign in, create and like posts. The authentication
-                  process is handled using tokens, ensuring secure access to the
-                  platform.
-                </p>
-                <ul class="project-desc-tools">
-                  <li>PHP</li>
-                  <li>SQLite</li>
-                </ul>
-              </div>
-            </figcaption>
-          </figure>
-          <figure>
-            <div class="project-image item">
-              <div class="img">
-                <img
                   src="./img/projects/2.jpg"
                   alt="The City Bike project's screenshot"
                 />
@@ -227,6 +195,38 @@
                   <li>Vue</li>
                   <li>PHP</li>
                   <li>MySQL</li>
+                </ul>
+              </div>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="project-image item">
+              <div class="img">
+                <img
+                  src="./img/projects/3.jpg"
+                  alt="Image for the Blog API project"
+                />
+                <div class="overlay">
+                  <a
+                    href="https://github.com/griMarina/Blog"
+                    target="_blank"
+                    class="overlay-text link"
+                    >VIEW GITHUB</a
+                  >
+                </div>
+              </div>
+            </div>
+            <figcaption class="project-desc item">
+              <div>
+                <p class="project-desc-text">
+                  This backend project is an API for a Blog platform that allows
+                  users to sign in, create and like posts. The authentication
+                  process is handled using tokens, ensuring secure access to the
+                  platform.
+                </p>
+                <ul class="project-desc-tools">
+                  <li>PHP</li>
+                  <li>SQLite</li>
                 </ul>
               </div>
             </figcaption>
@@ -323,29 +323,31 @@
         <form class="contact-form" action="#" method="POST">
           <input
             name="name"
-            class="contact-form-input"
+            class="contact-form-input form-item"
             type="text"
             placeholder="Name"
             required
           />
           <input
             name="email"
-            class="contact-form-input"
+            class="contact-form-input form-item"
             type="email"
             placeholder="Email"
             required
           />
           <textarea
             name="message"
-            class="contact-form-input"
-            name=""
-            id=""
+            class="contact-form-input form-item"
             cols="30"
             rows="10"
             placeholder="Message"
             required
           ></textarea>
-          <input class="contact-form-btn" type="submit" value="SEND" />
+          <input
+            class="contact-form-btn form-item"
+            type="submit"
+            value="SEND"
+          />
         </form>
       </section>
     </main>
