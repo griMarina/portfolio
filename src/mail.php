@@ -4,6 +4,8 @@ require "vendor/autoload.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+// http://localhost:8888/
+
 if ($_SERVER['HTTP_REFERER'] === 'http://127.0.0.1:8888/' && $_SERVER["REQUEST_METHOD"] === "POST") {
 
     $jsonData = file_get_contents("php://input");
