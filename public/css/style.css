@@ -644,7 +644,7 @@ header .nav #toggle:checked ~ .nav-links li:nth-child(3) {
 .contact-form-btn:hover {
   cursor: pointer;
   background: #6c92cc;
-  color: #141313;
+  color: #ffffff;
 }
 .contact-message {
   position: absolute;

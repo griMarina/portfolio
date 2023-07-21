@@ -1,16 +1,10 @@
 <?php
 
-require "vendor/autoload.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-// http://localhost:8888/
-
-if ($_SERVER['HTTP_REFERER'] === 'http://127.0.0.1:8888/' && $_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $jsonData = file_get_contents("php://input");
-    $data = json_decode($jsonData);
-
+function sendMail($data)
+{
 
     $name = htmlspecialchars($data->name);
     $email = htmlspecialchars($data->email);
@@ -28,22 +22,22 @@ if ($_SERVER['HTTP_REFERER'] === 'http://127.0.0.1:8888/' && $_SERVER["REQUEST_M
         exit;
     }
 
-    $login = $_SERVER["EMAIL_USERNAME"];
-    $password = $_SERVER["EMAIL_PASSWORD"];
-
     $mail = new PHPMailer(true);
 
     try {
         $mail->isSMTP();
         $mail->Host = "smtp.hostinger.com";
         $mail->SMTPAuth = true;
-        $mail->Username =  $login;
-        $mail->Password =  $password;
+        $mail->Username =  EMAIL_USERNAME;
+        $mail->Password =  EMAIL_PASSWORD;
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
 
-        $mail->setFrom($login);
-        $mail->addAddress($login);
+        $mail->setFrom(EMAIL_USERNAME);
+        $mail->addAddress(EMAIL_USERNAME);
+
+        $mail->isHTML(true);
+        $mail->CharSet = 'UTF-8';
 
         $mail->Subject = "New message from grimarina.com";
         $mail->Body = "Name: $name\n";
@@ -59,11 +53,8 @@ if ($_SERVER['HTTP_REFERER'] === 'http://127.0.0.1:8888/' && $_SERVER["REQUEST_M
         $status = "ERROR";
     }
 
-    header('Content-Type: application/json');
-    echo json_encode(["message" => $message, "status" => $status]);
-    exit;
-} else {
-    header('Content-Type: application/json');
-    echo json_encode(["message" => "Access denied.", "status" => "ERROR"]);
-    exit;
+    return [
+        'message' => $message,
+        'status' => $status
+    ];
 }

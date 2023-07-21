@@ -386,7 +386,7 @@ function formFunc() {
 
     contactMessage.offsetHeight;
 
-    const tl = gsap.timeline({ ease: "power1", delay: 1.5 });
+    const tl = gsap.timeline({ delay: 1.5 });
     tl.from(contactMessage, {
       yPercent: -100,
       autoAlpha: 0,
@@ -416,7 +416,7 @@ function formFunc() {
     const email = data.get("email").trim();
     const message = data.get("message").trim();
 
-    fetch("./src/mail.php", {
+    fetch("/mail.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
