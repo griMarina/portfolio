@@ -15,17 +15,14 @@ You can access my portfolio website at https://grimarina.com. Feel free to explo
 
 ### Built with 
 * HTML5
-* SCSS (Sass)
-* JavaScript (Vanilla)
-* GSAP (GreenSock Animation Platform)
+* SCSS
+* JavaScript
+* GSAP (for smooth animations)
 * PHP (for contact form functionality)
 
 ### Features
 
-* Single-page portfolio website
 * Responsive design for various screen sizes
 * Smooth animations using GSAP
 * Simple contact form with PHP processing
 * Minimalist and fast-loading design
-
-  
