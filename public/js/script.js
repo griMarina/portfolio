@@ -221,7 +221,7 @@ function sliderFunc() {
   let currentPosition = 0;
   let touchStartX = 0;
   let currentImage = 0;
-  const isMobile = window.screen.width < 768;
+  const isMobile = window.innerWidth < 768;
 
   function swapImages(direction) {
     const lastImgPosition = isMobile
