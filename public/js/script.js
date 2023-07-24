@@ -265,14 +265,12 @@ function sliderFunc() {
     const touchCurrentX = event.touches[0].clientX;
     const touchDiff = touchStartX - touchCurrentX;
 
-    if (touchDiff > 0) {
-      if (currentImage < totalImages - 1) {
-        swapImages("next");
-      }
-    } else if (touchDiff < 0) {
-      if (currentImage > 0) {
-        swapImages("previous");
-      }
+    const lastImg = isMobile ? totalImages - 1 : totalImages - 3;
+
+    if (touchDiff > 0 && currentImage < lastImg) {
+      swapImages("next");
+    } else if (touchDiff < 0 && currentImage > 0) {
+      swapImages("previous");
     }
 
     touchStartX = 0;
